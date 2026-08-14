@@ -1,4 +1,5 @@
 import type { FeatureCollection } from 'geojson';
+import { withBase } from './basePath';
 
 export type IndicatorTable = Record<string, Record<string, number>>;
 export type CentroidTable = Record<string, [number, number]>;
@@ -16,22 +17,22 @@ async function fetchJSON<T>(url: string): Promise<T> {
 }
 
 export function loadBlocks(): Promise<FeatureCollection> {
-  blocksPromise ??= fetchJSON('/data/blocks.geojson');
+  blocksPromise ??= fetchJSON(withBase('/data/blocks.geojson'));
   return blocksPromise;
 }
 
 export function loadDistricts(): Promise<FeatureCollection> {
-  districtsPromise ??= fetchJSON('/data/districts.geojson');
+  districtsPromise ??= fetchJSON(withBase('/data/districts.geojson'));
   return districtsPromise;
 }
 
 export function loadIndicators(): Promise<IndicatorTable> {
-  indicatorsPromise ??= fetchJSON('/data/indicators.json');
+  indicatorsPromise ??= fetchJSON(withBase('/data/indicators.json'));
   return indicatorsPromise;
 }
 
 export function loadCentroids(): Promise<CentroidTable> {
-  centroidsPromise ??= fetchJSON('/data/centroids.json');
+  centroidsPromise ??= fetchJSON(withBase('/data/centroids.json'));
   return centroidsPromise;
 }
 
@@ -40,7 +41,7 @@ export function loadCentroids(): Promise<CentroidTable> {
 // point/line/polygon layers alike, cached per file path.
 export function loadStandaloneGeometry(file: string): Promise<FeatureCollection> {
   if (!standaloneGeometryPromises.has(file)) {
-    standaloneGeometryPromises.set(file, fetchJSON(`/data/${file}`));
+    standaloneGeometryPromises.set(file, fetchJSON(withBase(`/data/${file}`)));
   }
   return standaloneGeometryPromises.get(file)!;
 }

@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { ABOUT_PAGES, type ContentBlock } from '../../content/aboutPages';
+import { withBase } from '../../lib/basePath';
 
 function Block({ block }: { block: ContentBlock }) {
   switch (block.type) {
@@ -20,7 +21,7 @@ function Block({ block }: { block: ContentBlock }) {
     case 'image':
       return (
         <figure className="mb-4">
-          <img src={block.src} alt={block.caption} className="w-full rounded-lg border border-slate-200" />
+          <img src={withBase(block.src)} alt={block.caption} className="w-full rounded-lg border border-slate-200" />
           <figcaption className="mt-1.5 text-xs text-slate-400">{block.caption}</figcaption>
         </figure>
       );

@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { withBase } from '../../lib/basePath';
 
 const PHOTO_COUNT = 20;
-const PHOTOS = Array.from({ length: PHOTO_COUNT }, (_, i) => `/consultant/consultation-${String(i + 1).padStart(2, '0')}.jpeg`);
+const PHOTOS = Array.from({ length: PHOTO_COUNT }, (_, i) =>
+  withBase(`/consultant/consultation-${String(i + 1).padStart(2, '0')}.jpeg`),
+);
 
 export function ConsultationGallery() {
   const [openPhoto, setOpenPhoto] = useState<string | null>(null);

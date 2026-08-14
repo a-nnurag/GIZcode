@@ -1,14 +1,15 @@
 import { wordmark } from '../../config/theme';
 import { useMapStore } from '../../state/mapStore';
+import { withBase } from '../../lib/basePath';
 import { AboutMenu } from './AboutMenu';
 import { CategoryNavBar } from '../CategoryNav/CategoryNavBar';
 
 const SYMBOLS = [
-  { src: '/symbols/image008.png', alt: 'Government of Uttarakhand' },
-  { src: '/symbols/image009.png', alt: 'STS' },
-  { src: '/symbols/image010.jpg', alt: 'ICARS' },
-  { src: '/symbols/image011.png', alt: 'Institute of Technology Roorkee' },
-  { src: '/symbols/image007.jpg', alt: 'German Cooperation / GIZ' },
+  { src: withBase('/symbols/image008.png'), alt: 'Government of Uttarakhand' },
+  { src: withBase('/symbols/image009.png'), alt: 'STS' },
+  { src: withBase('/symbols/image010.jpg'), alt: 'ICARS' },
+  { src: withBase('/symbols/image011.png'), alt: 'Institute of Technology Roorkee' },
+  { src: withBase('/symbols/image007.jpg'), alt: 'German Cooperation / GIZ' },
 ];
 
 export function Header() {
