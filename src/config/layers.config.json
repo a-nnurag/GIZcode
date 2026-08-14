@@ -1,0 +1,2005 @@
+[
+  {
+    "id": "hazard_drought",
+    "label": "Drought Risk",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/Block Wise Drought Risk.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      8.65384615385,
+      33.3333333333,
+      62.5
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Drought Risk by block, sourced from Hazards/Block Wise Drought Risk.shp.",
+    "dataQualityNote": null,
+    "subgroup": "drought"
+  },
+  {
+    "id": "hazard_extreme_rainfall",
+    "label": "Extreme Rainfall Risk",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/Block Wise Extreme Rainfall.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#DBEAFE",
+      "#93C5FD",
+      "#3B82F6",
+      "#1D4ED8"
+    ],
+    "breaks": [
+      6.66666666667,
+      40,
+      69.2307692308
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Extreme Rainfall Risk by block, sourced from Hazards/Block Wise Extreme Rainfall.shp.",
+    "dataQualityNote": null,
+    "subgroup": "extreme_rainfall"
+  },
+  {
+    "id": "hazard_flood",
+    "label": "Flood Risk",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/Block Wise Flood Risk.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      5.05050505051,
+      16.6666666667,
+      33.3333333333
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Flood Risk by block, sourced from Hazards/Block Wise Flood Risk.shp.",
+    "dataQualityNote": null,
+    "subgroup": "flood"
+  },
+  {
+    "id": "hazard_forest_fire",
+    "label": "Forest Fire Risk",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/Block Wise Forest Fire Risk.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      11.7647058824,
+      41.1764705882,
+      75
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Forest Fire Risk by block, sourced from Hazards/Block Wise Forest Fire Risk.shp.",
+    "dataQualityNote": null,
+    "subgroup": "forest_fire"
+  },
+  {
+    "id": "hazard_heatwave",
+    "label": "Heatwave Susceptibility",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/Block Wise Heatwave Suspectibility.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#B91C1C"
+    ],
+    "breaks": [
+      16.577540107,
+      58.1395348837,
+      87.5
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Heatwave Susceptibility by block, sourced from Hazards/Block Wise Heatwave Suspectibility.shp.",
+    "dataQualityNote": null,
+    "subgroup": "extreme_temperature"
+  },
+  {
+    "id": "hazard_landslide",
+    "label": "Landslide Risk",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/Block Wise Landslide.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      8.33333333333,
+      25,
+      53.8461538462
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Landslide Risk by block, sourced from Hazards/Block Wise Landslide.shp.",
+    "dataQualityNote": null,
+    "subgroup": "landslide"
+  },
+  {
+    "id": "agri_drought",
+    "label": "Agriculture Exposed to Drought",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Agriculture & Allied Sector/Agriculture exposed to Drought.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      20.6,
+      38.7,
+      53,
+      71.8
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Agriculture Exposed to Drought by block, sourced from Agriculture & Allied Sector/Agriculture exposed to Drought.shp.",
+    "dataQualityNote": null,
+    "subgroup": "agriculture"
+  },
+  {
+    "id": "agri_extreme_rainfall",
+    "label": "Agriculture Exposed to Extreme Rainfall",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Agriculture & Allied Sector/Agriculture exposed to Extreme Rainfall.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0,
+      0,
+      5.2,
+      78.7
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Agriculture Exposed to Extreme Rainfall by block, sourced from Agriculture & Allied Sector/Agriculture exposed to Extreme Rainfall.shp.",
+    "dataQualityNote": null,
+    "subgroup": "agriculture"
+  },
+  {
+    "id": "agri_flood",
+    "label": "Agriculture Exposed to Floods",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Agriculture & Allied Sector/Agriculture Exposed to Floods.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0,
+      0.7,
+      3.1,
+      12.4
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Agriculture Exposed to Floods by block, sourced from Agriculture & Allied Sector/Agriculture Exposed to Floods.shp.",
+    "dataQualityNote": null,
+    "subgroup": "agriculture"
+  },
+  {
+    "id": "agri_heatwave",
+    "label": "Agriculture Exposed to Heatwave",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Agriculture & Allied Sector/Agriculture exposed to Heatwave.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      12,
+      58.9,
+      99.7,
+      100
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Agriculture Exposed to Heatwave by block, sourced from Agriculture & Allied Sector/Agriculture exposed to Heatwave.shp.",
+    "dataQualityNote": null,
+    "subgroup": "agriculture"
+  },
+  {
+    "id": "agri_landslide",
+    "label": "Agriculture Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Agriculture & Allied Sector/Agriculture exposed to Landslide.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0,
+      0.6,
+      4.6,
+      15.5
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Agriculture Exposed to Landslide by block, sourced from Agriculture & Allied Sector/Agriculture exposed to Landslide.shp.",
+    "dataQualityNote": null,
+    "subgroup": "agriculture"
+  },
+  {
+    "id": "agri_rainfed_stress",
+    "label": "Rainfed Agriculture Stress",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Agriculture & Allied Sector/Rainfed Agriculture Stress.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      1.7,
+      4.3,
+      8.3,
+      19.4
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Rainfed Agriculture Stress by block, sourced from Agriculture & Allied Sector/Rainfed Agriculture Stress.shp.",
+    "dataQualityNote": null,
+    "subgroup": "agriculture"
+  },
+  {
+    "id": "energy_power_flood",
+    "label": "Power Stations Exposed to Flood",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Energy/Power Stations Exposed to Flood.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      3.81679389313,
+      15.9172661871,
+      30.2631578947
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Power Stations Exposed to Flood by block, sourced from Energy/Power Stations Exposed to Flood.shp.",
+    "dataQualityNote": null,
+    "subgroup": "energy"
+  },
+  {
+    "id": "energy_power_forest_fire",
+    "label": "Power Stations Exposed to Forest Fire",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Energy/Power Stations Exposed to Forest Fire.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.74157303371,
+      36.5853658537,
+      75
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Power Stations Exposed to Forest Fire by block, sourced from Energy/Power Stations Exposed to Forest Fire.shp.",
+    "dataQualityNote": null,
+    "subgroup": "energy"
+  },
+  {
+    "id": "energy_power_extreme_rainfall",
+    "label": "Power Stations Exposed to Extreme Rainfall",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Energy/Power Stations exposed to Extreme Rainfall.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      0,
+      17.7045177045,
+      83.2061068702
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Power Stations Exposed to Extreme Rainfall by block, sourced from Energy/Power Stations exposed to Extreme Rainfall.shp.",
+    "dataQualityNote": null,
+    "subgroup": "energy"
+  },
+  {
+    "id": "energy_power_landslide",
+    "label": "Power Stations Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Energy/Power Stations exposed to Landslide.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      9.66921119593,
+      32.9268292683,
+      68.6274509804
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Power Stations Exposed to Landslide by block, sourced from Energy/Power Stations exposed to Landslide.shp.",
+    "dataQualityNote": null,
+    "subgroup": "energy"
+  },
+  {
+    "id": "energy_transmission_extreme_rainfall",
+    "label": "Transmission Lines Exposed to Extreme Rainfall",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Energy/Transmission Lines exposed to Extreme Rainfall.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.47482014388,
+      34.375,
+      77.9922779923
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Transmission Lines Exposed to Extreme Rainfall by block, sourced from Energy/Transmission Lines exposed to Extreme Rainfall.shp.",
+    "dataQualityNote": null,
+    "subgroup": "energy"
+  },
+  {
+    "id": "energy_transmission_flood",
+    "label": "Transmission Lines Exposed to Flood",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Energy/Transmission Lines exposed to Flood.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      4.24836601307,
+      16.1616161616,
+      30.6397306397
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Transmission Lines Exposed to Flood by block, sourced from Energy/Transmission Lines exposed to Flood.shp.",
+    "dataQualityNote": "Only a point-count-based PCT field is present (max 41.67% across blocks) — no line-length-based percentage field exists in this file, unlike the Forest Fire variant.",
+    "subgroup": "energy"
+  },
+  {
+    "id": "energy_transmission_forest_fire",
+    "label": "Transmission Lines Exposed to Forest Fire",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Energy/Transmission Lines exposed to Forest Fire.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      9.09090909091,
+      51.0416666667,
+      71.875
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Transmission Lines Exposed to Forest Fire by block, sourced from Energy/Transmission Lines exposed to Forest Fire.shp.",
+    "dataQualityNote": "File carries two candidate fields: PCT (point-count based, max 41.67%) and pct2 (line-length based, max 100%). Using pct2 as the more representative exposure measure for a line feature; PCT is a leftover intermediate column.",
+    "subgroup": "energy"
+  },
+  {
+    "id": "energy_transmission_landslide",
+    "label": "Transmission Lines Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Energy/Transmission Lines exposed to Landslide.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      11.1111111111,
+      30.4761904762,
+      52
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Transmission Lines Exposed to Landslide by block, sourced from Energy/Transmission Lines exposed to Landslide.shp.",
+    "dataQualityNote": null,
+    "subgroup": "energy"
+  },
+  {
+    "id": "forest_protected_area_forest_fire",
+    "label": "Protected Area Exposed to Forest Fire",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Forest & Biodiversity/Protected Area Exposed to Forest Fire.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0,
+      0,
+      0,
+      76
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Protected Area Exposed to Forest Fire by block, sourced from Forest & Biodiversity/Protected Area Exposed to Forest Fire.shp.",
+    "dataQualityNote": null,
+    "subgroup": "forest"
+  },
+  {
+    "id": "forest_protected_area_landslide",
+    "label": "Protected Area Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Forest & Biodiversity/Protected Area Exposed to Landslide.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0,
+      0,
+      0,
+      0.3
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Protected Area Exposed to Landslide by block, sourced from Forest & Biodiversity/Protected Area Exposed to Landslide.shp.",
+    "dataQualityNote": null,
+    "subgroup": "forest"
+  },
+  {
+    "id": "forest_protected_multi_hazard",
+    "label": "Protected Areas Exposed to Multiple Hazards",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Forest & Biodiversity/Protected Areas exposed to More than one hazard.shp",
+    "geometrySource": "blocks",
+    "unit": "count",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0,
+      0,
+      2,
+      4
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Count (0-5) of distinct hazard types (extreme rainfall, flood, heatwave, landslide, forest fire) affecting protected areas in this block.",
+    "dataQualityNote": null,
+    "subgroup": "forest"
+  },
+  {
+    "id": "forest_wildlife_corridor_risk",
+    "label": "Wildlife Corridor Risk",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Forest & Biodiversity/Wildlife Corridor Risk.shp",
+    "geometrySource": "blocks",
+    "unit": "count",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      1,
+      2,
+      2,
+      3
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Count (0-5) of distinct hazard types affecting wildlife corridors in this block.",
+    "dataQualityNote": null,
+    "subgroup": "forest"
+  },
+  {
+    "id": "health_ayush_forest_fire_zone",
+    "label": "Ayush Facilities in Forest Fire Risk Zone",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Health/Ayush Forest Fire Health Risk Zone.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      16.6666666667,
+      46.6666666667,
+      75
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Ayush Facilities in Forest Fire Risk Zone by block, sourced from Health/Ayush Forest Fire Health Risk Zone.shp.",
+    "dataQualityNote": null,
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "health_ayush_facility_flood",
+    "label": "Ayush Facilities Exposed to Flood",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Health/Ayush Health Facility Flood Exposure.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.66666666667,
+      20,
+      50
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Ayush Facilities Exposed to Flood by block, sourced from Health/Ayush Health Facility Flood Exposure.shp.",
+    "dataQualityNote": null,
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "health_ayush_facility_landslide",
+    "label": "Ayush Facilities Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Health/Ayush Health Facility Landslide Exposure.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      0,
+      20,
+      37.5
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Ayush Facilities Exposed to Landslide by block, sourced from Health/Ayush Health Facility Landslide Exposure.shp.",
+    "dataQualityNote": null,
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "health_access_disruption",
+    "label": "Healthcare Access Disruption",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Health/Healthcare Access Disruption based on Number of Hospitals.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.97674418605,
+      33.3333333333,
+      75
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Healthcare Access Disruption by block, sourced from Health/Healthcare Access Disruption based on Number of Hospitals.shp.",
+    "dataQualityNote": "Source field is named 'pcy' (not 'pct'). Value range across all blocks (0-100) matches every other percentage field in the dataset, so treated as a percentage; confirm exact wording/semantics with the data provider before public launch.",
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "health_hospitals_flood",
+    "label": "Hospitals Exposed to Flood",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Health/Hospitals exposed to Flood.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      1.77514792899,
+      20,
+      33.3333333333
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Hospitals Exposed to Flood by block, sourced from Health/Hospitals exposed to Flood.shp.",
+    "dataQualityNote": null,
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "health_hospitals_forest_fire",
+    "label": "Hospitals Exposed to Forest Fire",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Health/Hospitals exposed to Forest Fire.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      0.591715976331,
+      33.3333333333,
+      66.6666666667
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Hospitals Exposed to Forest Fire by block, sourced from Health/Hospitals exposed to Forest Fire.shp.",
+    "dataQualityNote": null,
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "health_hospitals_landslide",
+    "label": "Hospitals Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Health/Hospitals exposed to Landslide.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      14.2857142857,
+      33.3333333333,
+      50
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Hospitals Exposed to Landslide by block, sourced from Health/Hospitals exposed to Landslide.shp.",
+    "dataQualityNote": null,
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "forest_wildlife_flood",
+    "label": "Wildlife Corridors Exposed to Flood",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Forest & Biodiversity/Wildlife corridors exposed to floods.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0,
+      33.3,
+      59,
+      66.7
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Wildlife Corridors Exposed to Flood by block, sourced from Forest & Biodiversity/Wildlife corridors exposed to floods.shp.",
+    "dataQualityNote": null,
+    "subgroup": "forest"
+  },
+  {
+    "id": "forest_wildlife_landslide",
+    "label": "Wildlife Corridors Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Forest & Biodiversity/Wildlife corridors exposed to landslide.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0,
+      0,
+      55,
+      100
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Wildlife Corridors Exposed to Landslide by block, sourced from Forest & Biodiversity/Wildlife corridors exposed to landslide.shp.",
+    "dataQualityNote": "Source field is named 'pcy' (not 'pct'), the same naming quirk seen in Health/Healthcare Access Disruption. Value range matches every other percentage field, so treated as a percentage.",
+    "subgroup": "forest"
+  },
+  {
+    "id": "road_flood",
+    "label": "Roads Exposed to Flood",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Roads exposed to flood.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      46,
+      55.00000000000001,
+      66
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Roads Exposed to Flood by block, sourced from Infrastructure & Assets/Roads exposed to flood.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction rather than a 0-100 percentage like every other exposure layer in the dataset; scaled by 100 at extraction for consistency.",
+    "subgroup": "roads"
+  },
+  {
+    "id": "road_forest_fire",
+    "label": "Roads Exposed to Forest Fire",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Roads exposed to forest fire.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      28.000000000000004,
+      56.00000000000001,
+      74
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Roads Exposed to Forest Fire by block, sourced from Infrastructure & Assets/Roads exposed to forest fire.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "roads"
+  },
+  {
+    "id": "road_landslide",
+    "label": "Roads Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Roads exposed to landslide.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      10,
+      60,
+      76
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Roads Exposed to Landslide by block, sourced from Infrastructure & Assets/Roads exposed to landslide.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "roads"
+  },
+  {
+    "id": "road_rainfall",
+    "label": "Roads Exposed to Extreme Rainfall (RX1day)",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Roads exposed to rainfall.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      57.99999999999999,
+      72,
+      77
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Roads Exposed to Extreme Rainfall (RX1day) by block, sourced from Infrastructure & Assets/Roads exposed to rainfall.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "roads"
+  },
+  {
+    "id": "road_settlements_steep_slope",
+    "label": "Settlements Exposed to Steep Slope Along Roads",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Settlements exposed to steep slope along roads.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      22,
+      55.00000000000001,
+      73
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Settlements Exposed to Steep Slope Along Roads by block, sourced from Infrastructure & Assets/Settlements exposed to steep slope along roads.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "roads"
+  },
+  {
+    "id": "tourism_extreme_rainfall",
+    "label": "Tourist Sites Exposed to Extreme Rainfall (RX1day)",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to extreme rainfall.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      59,
+      73,
+      78
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Tourist Sites Exposed to Extreme Rainfall (RX1day) by block, sourced from Infrastructure & Assets/Tourist sites exposed to extreme rainfall.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "tourism"
+  },
+  {
+    "id": "tourism_flood",
+    "label": "Tourist Sites Exposed to Flood",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to floods.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      46,
+      56.00000000000001,
+      67
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Tourist Sites Exposed to Flood by block, sourced from Infrastructure & Assets/Tourist sites exposed to floods.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "tourism"
+  },
+  {
+    "id": "tourism_forest_fire",
+    "label": "Tourist Sites Exposed to Forest Fire",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to forest fire.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      28.000000000000004,
+      57.99999999999999,
+      77
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Tourist Sites Exposed to Forest Fire by block, sourced from Infrastructure & Assets/Tourist sites exposed to forest fire.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "tourism"
+  },
+  {
+    "id": "tourism_landslide",
+    "label": "Tourist Sites Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to landslide.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      10,
+      60,
+      78
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Tourist Sites Exposed to Landslide by block, sourced from Infrastructure & Assets/Tourist sites exposed to landslide.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "tourism"
+  },
+  {
+    "id": "tourism_heat_tx90p",
+    "label": "Tourist Sites Exposed to Extreme Heat (TX90p)",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to TX90p.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      28.000000000000004,
+      40,
+      65
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Tourist Sites Exposed to Extreme Heat (TX90p) by block, sourced from Infrastructure & Assets/Tourist sites exposed to TX90p.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
+    "subgroup": "tourism"
+  },
+  {
+    "id": "water_canal_flood",
+    "label": "Canals Exposed to Flood",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Canal exposed to floods.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.66666666667,
+      20,
+      50
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Canals Exposed to Flood by block, sourced from Infrastructure & Assets/Canal exposed to floods.shp.",
+    "dataQualityNote": null,
+    "subgroup": "water"
+  },
+  {
+    "id": "water_canal_landslide",
+    "label": "Canals Exposed to Landslide",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Canal exposed to landslide.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.66666666667,
+      20,
+      50
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Canals Exposed to Landslide by block, sourced from Infrastructure & Assets/Canal exposed to landslide.shp.",
+    "dataQualityNote": "Source field is named 'Pct_Flood' (a leftover column name from the flood-layer template) despite this file covering landslide exposure; it is the only percentage field present and its values are block-specific, so used as-is.",
+    "subgroup": "water"
+  },
+  {
+    "id": "water_springs_drought",
+    "label": "Springs Exposed to Drought",
+    "category": "exposure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Springs exposed to drought.shp",
+    "geometrySource": "centroids",
+    "unit": "%",
+    "renderType": "proportional-dot",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      0,
+      20,
+      37.5
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.9,
+    "defaultVisible": false,
+    "description": "Springs Exposed to Drought by block, sourced from Infrastructure & Assets/Springs exposed to drought.shp.",
+    "dataQualityNote": null,
+    "subgroup": "water"
+  },
+  {
+    "id": "risk_agriculture",
+    "label": "Agriculture Risk Score",
+    "category": "risk_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_agri_risk.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      35.2,
+      47.2,
+      49.9,
+      52.3
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Agriculture Risk Score by block, sourced from Risk & Vulnerability/Block_agri_risk.shp.",
+    "dataQualityNote": null,
+    "subgroup": "agriculture"
+  },
+  {
+    "id": "risk_energy",
+    "label": "Energy Risk Score",
+    "category": "risk_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_energy_Risk.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      35.7,
+      52.1,
+      59.1,
+      64.3
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Energy Risk Score by block, sourced from Risk & Vulnerability/Block_energy_Risk.shp.",
+    "dataQualityNote": null,
+    "subgroup": "energy"
+  },
+  {
+    "id": "risk_health",
+    "label": "Health Risk Score",
+    "category": "risk_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_health_risk.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      36.4,
+      50.3,
+      54.5,
+      56.5
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Health Risk Score by block, sourced from Risk & Vulnerability/Block_health_risk.shp.",
+    "dataQualityNote": null,
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "risk_road",
+    "label": "Roads Risk Score",
+    "category": "risk_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_road_risk.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      40.2,
+      49.3,
+      52.6,
+      56.8
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Roads Risk Score by block, sourced from Risk & Vulnerability/Block_road_risk.shp.",
+    "dataQualityNote": null,
+    "subgroup": "roads"
+  },
+  {
+    "id": "risk_water",
+    "label": "Water Risk Score",
+    "category": "risk_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_water_risk.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      36.5,
+      44.4,
+      47.9,
+      62.8
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Water Risk Score by block, sourced from Risk & Vulnerability/Block_water_risk.shp.",
+    "dataQualityNote": null,
+    "subgroup": "water"
+  },
+  {
+    "id": "vul_agriculture",
+    "label": "Agriculture Vulnerability Index",
+    "category": "vulnerability_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_agri_vul.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0.4,
+      0.5,
+      0.6,
+      0.7
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
+    "dataQualityNote": null,
+    "subgroup": "agriculture"
+  },
+  {
+    "id": "vul_energy",
+    "label": "Energy Vulnerability Index",
+    "category": "vulnerability_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_energy_vul.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0.3,
+      0.7,
+      0.7,
+      0.7
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
+    "dataQualityNote": null,
+    "subgroup": "energy"
+  },
+  {
+    "id": "vul_health",
+    "label": "Health Vulnerability Index",
+    "category": "vulnerability_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_health_vul.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0.4,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
+    "dataQualityNote": null,
+    "subgroup": "healthcare"
+  },
+  {
+    "id": "vul_road",
+    "label": "Roads Vulnerability Index",
+    "category": "vulnerability_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_road_vul.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0.4,
+      0.5,
+      0.6,
+      0.6
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
+    "dataQualityNote": null,
+    "subgroup": "roads"
+  },
+  {
+    "id": "vul_water",
+    "label": "Water Vulnerability Index",
+    "category": "vulnerability_scores",
+    "pinned": false,
+    "sourceShapefile": "Risk & Vulnerability/Block_Water.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#F0E3DA",
+      "#EDD7C9",
+      "#E6C2AA",
+      "#DE9C77",
+      "#AB6156"
+    ],
+    "breaks": [
+      0.4,
+      0.7,
+      0.7,
+      0.7
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
+    "dataQualityNote": null,
+    "subgroup": "water"
+  },
+  {
+    "id": "hazard_climate_precip_mean",
+    "label": "Mean Annual Total Precipitation (mm)",
+    "category": "climate",
+    "pinned": false,
+    "sourceShapefile": "Climate/Precipitation/PRCPTOT_mean",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#DBEAFE",
+      "#93C5FD",
+      "#3B82F6",
+      "#1D4ED8"
+    ],
+    "breaks": [
+      1923.76103515625,
+      2287.355712890625,
+      2579.3221842447915
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of gridded mean annual total precipitation (PRCPTOT), mm/year, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
+    "subgroup": "precipitation"
+  },
+  {
+    "id": "hazard_climate_precip_cv",
+    "label": "Precipitation Variability (Coefficient of Variation)",
+    "category": "climate",
+    "pinned": false,
+    "sourceShapefile": "Climate/Precipitation/PRCPTOT_CV",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#DBEAFE",
+      "#93C5FD",
+      "#3B82F6",
+      "#1D4ED8"
+    ],
+    "breaks": [
+      11.90244156397306,
+      13.911971859486178,
+      16.75531538300595
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of the coefficient of variation of annual total precipitation per block — higher values indicate less predictable rainfall year to year.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
+    "subgroup": "precipitation"
+  },
+  {
+    "id": "hazard_climate_temp_max_hist",
+    "label": "Historical Mean Maximum Temperature (°C)",
+    "category": "climate",
+    "pinned": false,
+    "sourceShapefile": "Climate/Temperature/Tmax_his",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#B91C1C"
+    ],
+    "breaks": [
+      3.6349298263850964,
+      9.872161971198189,
+      15.012417078018188
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of historical mean maximum temperature per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
+    "subgroup": "temperature"
+  },
+  {
+    "id": "hazard_climate_temp_min_hist",
+    "label": "Historical Mean Minimum Temperature (°C)",
+    "category": "climate",
+    "pinned": false,
+    "sourceShapefile": "Climate/Temperature/Tmin_his",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#B91C1C"
+    ],
+    "breaks": [
+      -6.182250213623047,
+      -1.518344231446584,
+      2.8109784381730214
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of historical mean minimum temperature per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
+    "subgroup": "temperature"
+  },
+  {
+    "id": "hazard_extreme_rainfall_r90p",
+    "label": "Extreme Rainfall Total Above 90th Percentile (R90p, mm)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Climate/Extreme Rainfall/R90p",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#DBEAFE",
+      "#93C5FD",
+      "#3B82F6",
+      "#1D4ED8"
+    ],
+    "breaks": [
+      776.388279183201,
+      861.1382242780079,
+      954.0723735491434
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of total precipitation from days exceeding the local 90th-percentile daily rainfall, mm, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
+    "subgroup": "extreme_rainfall"
+  },
+  {
+    "id": "hazard_extreme_rainfall_rx5d",
+    "label": "Maximum 5-Day Rainfall Total (RX5d, mm)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Climate/Extreme Rainfall/RX5d",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#DBEAFE",
+      "#93C5FD",
+      "#3B82F6",
+      "#1D4ED8"
+    ],
+    "breaks": [
+      194.20530208677016,
+      243.23734025221606,
+      278.0875979708642
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of the annual maximum consecutive 5-day precipitation total, mm, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
+    "subgroup": "extreme_rainfall"
+  },
+  {
+    "id": "hazard_extreme_temp_tn90p",
+    "label": "Warm Nights Frequency (TN90p)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Climate/Extreme Temperature/TN90p",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#B91C1C"
+    ],
+    "breaks": [
+      10.019697063485372,
+      10.099473917779843,
+      10.19923786836512
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of the percentage of days with minimum temperature above the local 90th percentile, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
+    "subgroup": "extreme_temperature"
+  },
+  {
+    "id": "hazard_extreme_temp_tx90p",
+    "label": "Warm Days Frequency (TX90p)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Climate/Extreme Temperature/TX90p",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#B91C1C"
+    ],
+    "breaks": [
+      10.19316488581154,
+      10.393012429040576,
+      10.540023533548242
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of the percentage of days with maximum temperature above the local 90th percentile, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
+    "subgroup": "extreme_temperature"
+  },
+  {
+    "id": "hazard_extent_drought",
+    "label": "Drought Zone (extent)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/drought.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "hazard-extents/drought.geojson",
+    "unit": "none",
+    "renderType": "flat-extent",
+    "colorRamp": [
+      "#D32F2F"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.35,
+    "defaultVisible": false,
+    "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
+    "subgroup": "drought"
+  },
+  {
+    "id": "hazard_extent_extreme_rainfall",
+    "label": "Extreme Rainfall Zone (extent)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/extreme-rainfall.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "hazard-extents/extreme-rainfall.geojson",
+    "unit": "none",
+    "renderType": "flat-extent",
+    "colorRamp": [
+      "#D32F2F"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.35,
+    "defaultVisible": false,
+    "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
+    "subgroup": "extreme_rainfall"
+  },
+  {
+    "id": "hazard_extent_forest_fire",
+    "label": "Forest Fire Zone (extent)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/Forest Fire Risk.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "hazard-extents/forest-fire-risk.geojson",
+    "unit": "none",
+    "renderType": "flat-extent",
+    "colorRamp": [
+      "#D32F2F"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.35,
+    "defaultVisible": false,
+    "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
+    "subgroup": "forest_fire"
+  },
+  {
+    "id": "hazard_extent_heatwave",
+    "label": "Heatwave Zone (extent)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/heatwave-susceptibility.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "hazard-extents/heatwave-susceptibility.geojson",
+    "unit": "none",
+    "renderType": "flat-extent",
+    "colorRamp": [
+      "#D32F2F"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.35,
+    "defaultVisible": false,
+    "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
+    "subgroup": "extreme_temperature"
+  },
+  {
+    "id": "hazard_extent_landslide",
+    "label": "Landslide Zone (extent)",
+    "category": "hazards",
+    "pinned": false,
+    "sourceShapefile": "Hazards/landslide.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "hazard-extents/landslide.geojson",
+    "unit": "none",
+    "renderType": "flat-extent",
+    "colorRamp": [
+      "#D32F2F"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.35,
+    "defaultVisible": false,
+    "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
+    "subgroup": "landslide"
+  },
+  {
+    "id": "infra_asset_forest_patches",
+    "label": "Forest Patches",
+    "category": "infrastructure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Forest.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/forest-patches.geojson",
+    "unit": "none",
+    "renderType": "raw-polygons",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.5,
+    "defaultVisible": false,
+    "description": "Raw forest patches geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null,
+    "subgroup": null
+  },
+  {
+    "id": "infra_asset_power_stations",
+    "label": "Power Stations",
+    "category": "infrastructure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Power Stations.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/power-stations.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw power stations geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null,
+    "subgroup": null
+  },
+  {
+    "id": "infra_asset_roads",
+    "label": "Road Network",
+    "category": "infrastructure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Roads.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/roads.geojson",
+    "unit": "none",
+    "renderType": "raw-lines",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw road network geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null,
+    "subgroup": null
+  },
+  {
+    "id": "infra_asset_soil_health_points",
+    "label": "Soil Health Survey Points",
+    "category": "infrastructure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Soil Health Data points.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/soil-health-points.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw soil health survey points geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null,
+    "subgroup": null
+  },
+  {
+    "id": "infra_asset_spring_locations",
+    "label": "Spring Locations",
+    "category": "infrastructure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Spring locations.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/spring-locations.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw spring locations geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null,
+    "subgroup": null
+  },
+  {
+    "id": "infra_asset_transmission_distribution_lines",
+    "label": "Transmission & Distribution Lines",
+    "category": "infrastructure",
+    "pinned": false,
+    "sourceShapefile": "Infrastructure & Assets/Transmission and Distribution Lines.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/transmission-distribution-lines.geojson",
+    "unit": "none",
+    "renderType": "raw-lines",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw transmission & distribution lines geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null,
+    "subgroup": null
+  }
+]

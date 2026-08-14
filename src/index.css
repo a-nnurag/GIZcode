@@ -1,0 +1,36 @@
+@import 'tailwindcss';
+
+:root {
+  --color-primary: #006d77;
+  --color-secondary: #83c5be;
+  --color-accent: #3f51b5;
+  --color-highlight: #e9c46a;
+  --color-danger: #e76f51;
+  --color-background: #f8fafc;
+  --color-card: #ffffff;
+  --color-text: #1f2937;
+
+  --color-safe: #2e7d32;
+  --color-watch: #fbc02d;
+  --color-alert: #f57c00;
+  --color-emergency: #d32f2f;
+  --color-information: #1976d2;
+  --color-inactive: #b0bec5;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+.maplibregl-popup-content {
+  border-radius: 0.5rem;
+}
