@@ -1,10 +1,14 @@
 // Owns the gated backend's base URL and session token — every other module talks to
-// the API exclusively through apiFetch(), so it never has to know a token exists.
-const API_BASE = import.meta.env.VITE_API_BASE_URL as string | undefined;
+// the API exclusively through apiFetch() (or getAuthHeader() for the pmtiles protocol,
+// which issues its own raw fetches and can't go through apiFetch), so nothing else
+// needs to know a token exists.
+const API_BASE_VALUE = import.meta.env.VITE_API_BASE_URL as string | undefined;
 
-if (!API_BASE) {
+if (!API_BASE_VALUE) {
   throw new Error('VITE_API_BASE_URL is not set — see apps/atlas/.env.example');
 }
+
+export const API_BASE = API_BASE_VALUE;
 
 interface SessionResponse {
   token: string;
@@ -33,6 +37,13 @@ async function getToken(): Promise<string> {
     }
   }
   return (await sessionPromise).token;
+}
+
+// For callers that issue their own raw fetch()es instead of going through apiFetch —
+// currently just the pmtiles protocol (src/lib/pmtilesProtocol.ts), which needs a
+// live Authorization value to attach to its own Range requests.
+export async function getAuthHeader(): Promise<string> {
+  return `Bearer ${await getToken()}`;
 }
 
 // Wraps fetch() with the gated backend's base URL and auth header, and retries once

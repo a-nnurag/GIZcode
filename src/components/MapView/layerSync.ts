@@ -1,73 +1,36 @@
 import type { Map as MapLibreMap } from 'maplibre-gl';
 import type { LayerConfig } from '../../config/layers';
-import type { IndicatorTable } from '../../lib/data';
-import { stepColorExpression, stretchColorExpression, isStretchedLayer, sqrtRadiusExpression } from '../../lib/colorScale';
+import { pmtilesUrl } from '../../lib/pmtilesProtocol';
 import { loadStandaloneGeometry } from '../../lib/data';
 
 export function mapLayerId(layerId: string): string {
   return `layer-${layerId}`;
 }
 
-function pushFeatureState(map: MapLibreMap, source: string, layerId: string, indicators: IndicatorTable) {
-  for (const [bpcode, values] of Object.entries(indicators)) {
-    const value = values[layerId];
-    if (value === undefined) continue;
-    map.setFeatureState({ source, id: bpcode }, { [layerId]: value });
-  }
-}
-
-function addChoroplethLayer(map: MapLibreMap, config: LayerConfig, indicators: IndicatorTable, opacity: number) {
-  pushFeatureState(map, 'blocks', config.id, indicators);
-  map.addLayer({
-    id: mapLayerId(config.id),
-    type: 'fill',
-    source: 'blocks',
-    paint: {
-      'fill-color': isStretchedLayer(config) ? stretchColorExpression(config) : stepColorExpression(config),
-      'fill-opacity': opacity,
-      'fill-outline-color': 'rgba(0,0,0,0.15)',
-    },
-  });
-}
-
-function addProportionalDotLayer(map: MapLibreMap, config: LayerConfig, indicators: IndicatorTable, opacity: number) {
-  pushFeatureState(map, 'centroids', config.id, indicators);
-  map.addLayer({
-    id: mapLayerId(config.id),
-    type: 'circle',
-    source: 'centroids',
-    paint: {
-      'circle-radius': sqrtRadiusExpression(config.id),
-      'circle-color': stepColorExpression(config),
-      'circle-opacity': opacity,
-      'circle-stroke-width': 1,
-      'circle-stroke-color': '#ffffff',
-    },
-  });
-}
-
-async function addFlatExtentLayer(map: MapLibreMap, config: LayerConfig, opacity: number) {
+// Every value-bearing render type (choropleth, proportional-dot) plus the flat
+// single-color ones (flat-extent, raw-lines, raw-polygons) share one strategy: the
+// coloring is baked server-side into a pre-rendered raster PMTiles archive (see
+// data-pipeline/scripts/09-render-raster-tiles.mjs), so the client never needs the
+// underlying indicator values or a fill/circle/line paint expression — just an image.
+// raw-points is the one holdout (see addRawPointsLayer below): it needs MapLibre's
+// client-side `cluster: true`, which only exists on geojson sources.
+function addRasterLayer(map: MapLibreMap, config: LayerConfig, opacity: number) {
   const sourceId = `source-${config.id}`;
   if (!map.getSource(sourceId)) {
-    const data = await loadStandaloneGeometry(config.geometryFile!);
-    if (map.getSource(sourceId)) return; // guard against race if toggled twice quickly
-    map.addSource(sourceId, { type: 'geojson', data });
+    map.addSource(sourceId, { type: 'raster', url: pmtilesUrl(`${config.id}.pmtiles`), tileSize: 256 });
   }
   if (map.getLayer(mapLayerId(config.id))) return;
   map.addLayer({
     id: mapLayerId(config.id),
-    type: 'fill',
+    type: 'raster',
     source: sourceId,
-    paint: {
-      'fill-color': config.colorRamp[0],
-      'fill-opacity': opacity,
-      'fill-outline-color': config.colorRamp[0],
-    },
+    paint: { 'raster-opacity': opacity },
   });
 }
 
-// Raw Infrastructure & Assets geometry — literal locations/lines/patches, not
-// a graded indicator, so no feature-state/color-ramp classification here.
+// Raw Infrastructure & Assets point locations — literal locations, not a graded
+// indicator, so no server-baked coloring; kept on the gated-JSON/vector path because
+// MapLibre's client-side clustering only works on geojson sources.
 async function addRawPointsLayer(map: MapLibreMap, config: LayerConfig, opacity: number) {
   const sourceId = `source-${config.id}`;
   if (!map.getSource(sourceId)) {
@@ -113,63 +76,12 @@ async function addRawPointsLayer(map: MapLibreMap, config: LayerConfig, opacity:
   });
 }
 
-async function addRawLinesLayer(map: MapLibreMap, config: LayerConfig, opacity: number) {
-  const sourceId = `source-${config.id}`;
-  if (!map.getSource(sourceId)) {
-    const data = await loadStandaloneGeometry(config.geometryFile!);
-    if (map.getSource(sourceId)) return;
-    map.addSource(sourceId, { type: 'geojson', data });
+export function addLayerToMap(map: MapLibreMap, config: LayerConfig, opacity: number) {
+  if (config.renderType === 'raw-points') {
+    void addRawPointsLayer(map, config, opacity);
+    return;
   }
-  if (map.getLayer(mapLayerId(config.id))) return;
-  map.addLayer({
-    id: mapLayerId(config.id),
-    type: 'line',
-    source: sourceId,
-    paint: { 'line-color': config.colorRamp[0], 'line-opacity': opacity, 'line-width': 1.5 },
-  });
-}
-
-async function addRawPolygonsLayer(map: MapLibreMap, config: LayerConfig, opacity: number) {
-  const sourceId = `source-${config.id}`;
-  if (!map.getSource(sourceId)) {
-    const data = await loadStandaloneGeometry(config.geometryFile!);
-    if (map.getSource(sourceId)) return;
-    map.addSource(sourceId, { type: 'geojson', data });
-  }
-  if (map.getLayer(mapLayerId(config.id))) return;
-  map.addLayer({
-    id: mapLayerId(config.id),
-    type: 'fill',
-    source: sourceId,
-    paint: {
-      'fill-color': config.colorRamp[0],
-      'fill-opacity': opacity,
-      'fill-outline-color': config.colorRamp[0],
-    },
-  });
-}
-
-export function addLayerToMap(map: MapLibreMap, config: LayerConfig, indicators: IndicatorTable, opacity: number) {
-  switch (config.renderType) {
-    case 'choropleth':
-      addChoroplethLayer(map, config, indicators, opacity);
-      return;
-    case 'proportional-dot':
-      addProportionalDotLayer(map, config, indicators, opacity);
-      return;
-    case 'flat-extent':
-      void addFlatExtentLayer(map, config, opacity);
-      return;
-    case 'raw-points':
-      void addRawPointsLayer(map, config, opacity);
-      return;
-    case 'raw-lines':
-      void addRawLinesLayer(map, config, opacity);
-      return;
-    case 'raw-polygons':
-      void addRawPolygonsLayer(map, config, opacity);
-      return;
-  }
+  addRasterLayer(map, config, opacity);
 }
 
 export function removeLayerFromMap(map: MapLibreMap, layerId: string) {
@@ -181,17 +93,10 @@ export function removeLayerFromMap(map: MapLibreMap, layerId: string) {
 
 export function setLayerOpacity(map: MapLibreMap, config: LayerConfig, opacity: number) {
   const id = mapLayerId(config.id);
-  const propByRenderType: Record<LayerConfig['renderType'], string> = {
-    choropleth: 'fill-opacity',
-    'flat-extent': 'fill-opacity',
-    'raw-polygons': 'fill-opacity',
-    'proportional-dot': 'circle-opacity',
-    'raw-points': 'circle-opacity',
-    'raw-lines': 'line-opacity',
-  };
-  const prop = propByRenderType[config.renderType];
-  if (map.getLayer(id)) map.setPaintProperty(id, prop, opacity);
   if (config.renderType === 'raw-points') {
-    if (map.getLayer(`${id}-unclustered`)) map.setPaintProperty(`${id}-unclustered`, prop, opacity);
+    if (map.getLayer(id)) map.setPaintProperty(id, 'circle-opacity', opacity);
+    if (map.getLayer(`${id}-unclustered`)) map.setPaintProperty(`${id}-unclustered`, 'circle-opacity', opacity);
+    return;
   }
+  if (map.getLayer(id)) map.setPaintProperty(id, 'raster-opacity', opacity);
 }

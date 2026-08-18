@@ -1,13 +1,8 @@
 import type { FeatureCollection } from 'geojson';
 import { apiFetch } from './apiClient';
 
-export type IndicatorTable = Record<string, Record<string, number>>;
-export type CentroidTable = Record<string, [number, number]>;
-
 let blocksPromise: Promise<FeatureCollection> | null = null;
 let districtsPromise: Promise<FeatureCollection> | null = null;
-let indicatorsPromise: Promise<IndicatorTable> | null = null;
-let centroidsPromise: Promise<CentroidTable> | null = null;
 const standaloneGeometryPromises = new Map<string, Promise<FeatureCollection>>();
 
 async function fetchJSON<T>(path: string): Promise<T> {
@@ -26,19 +21,24 @@ export function loadDistricts(): Promise<FeatureCollection> {
   return districtsPromise;
 }
 
-// TEMPORARY: served as a gated bulk file until Phase B's raster tile pipeline ships
-// (see the plan doc) — at that point this goes away in favor of per-block lookups.
-export function loadIndicators(): Promise<IndicatorTable> {
-  indicatorsPromise ??= fetchJSON('/api/data/indicators.json');
-  return indicatorsPromise;
+export interface BlockInfo {
+  bpcode: string;
+  values: Record<string, number>;
 }
 
-export function loadCentroids(): Promise<CentroidTable> {
-  centroidsPromise ??= fetchJSON('/api/data/centroids.json');
-  return centroidsPromise;
+const blockInfoPromises = new Map<string, Promise<BlockInfo>>();
+
+// One block's indicator values, fetched only when that block is actually selected —
+// this is the piece that keeps the full analytical table from ever reaching the
+// browser in bulk (see BlockDetailPanel.tsx, the only caller).
+export function loadBlockInfo(bpcode: string): Promise<BlockInfo> {
+  if (!blockInfoPromises.has(bpcode)) {
+    blockInfoPromises.set(bpcode, fetchJSON(`/api/block-info/${bpcode}`));
+  }
+  return blockInfoPromises.get(bpcode)!;
 }
 
-// Generic loader for any standalone (non-blocks/centroids) geometry file —
+// Generic loader for any standalone (non-blocks) geometry file —
 // used by the flat-extent hazard masks and the raw Infrastructure & Assets
 // point/line/polygon layers alike, cached per file path.
 export function loadStandaloneGeometry(file: string): Promise<FeatureCollection> {

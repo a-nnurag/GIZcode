@@ -2,17 +2,16 @@ import { useEffect, useRef } from 'react';
 import type { Map as MapLibreMap } from 'maplibre-gl';
 import { useMapStore } from '../../state/mapStore';
 import { LAYERS_BY_ID } from '../../config/layers';
-import type { IndicatorTable } from '../../lib/data';
 import { addLayerToMap, removeLayerFromMap, setLayerOpacity, mapLayerId } from './layerSync';
 
-export function useLayerSync(map: MapLibreMap | null, ready: boolean, indicators: IndicatorTable | null) {
+export function useLayerSync(map: MapLibreMap | null, ready: boolean) {
   const activeLayers = useMapStore((s) => s.activeLayers);
   const layerOpacity = useMapStore((s) => s.layerOpacity);
   const addedRef = useRef<Set<string>>(new Set());
 
   // Add/remove layers and enforce z-order whenever the active set or its order changes.
   useEffect(() => {
-    if (!map || !ready || !indicators) return;
+    if (!map || !ready) return;
     const added = addedRef.current;
     const currentIds = new Set(activeLayers);
 
@@ -27,7 +26,7 @@ export function useLayerSync(map: MapLibreMap | null, ready: boolean, indicators
       if (!added.has(id)) {
         const config = LAYERS_BY_ID[id];
         if (!config) continue;
-        addLayerToMap(map, config, indicators, layerOpacity[id] ?? config.defaultOpacity);
+        addLayerToMap(map, config, layerOpacity[id] ?? config.defaultOpacity);
         added.add(id);
       }
     }
@@ -44,7 +43,7 @@ export function useLayerSync(map: MapLibreMap | null, ready: boolean, indicators
     // layerOpacity intentionally excluded: initial opacity is applied on add,
     // subsequent opacity changes are handled by the effect below.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [map, ready, indicators, activeLayers]);
+  }, [map, ready, activeLayers]);
 
   // Live opacity updates for already-added layers.
   useEffect(() => {

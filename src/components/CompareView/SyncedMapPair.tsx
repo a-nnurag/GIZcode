@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import maplibregl, { type Map as MapLibreMap } from 'maplibre-gl';
 import { BASEMAP_STYLE_URL, INITIAL_VIEW } from '../../config/basemap';
-import { addBaseSources, loadBaseSourceData } from '../MapView/baseSources';
+import { addBaseSources } from '../MapView/baseSources';
 import { addLayerToMap, removeLayerFromMap } from '../MapView/layerSync';
 import { LAYERS_BY_ID } from '../../config/layers';
-import { loadIndicators, type IndicatorTable } from '../../lib/data';
 
 function useCompareMap(containerRef: React.RefObject<HTMLDivElement | null>) {
   const [map, setMap] = useState<MapLibreMap | null>(null);
@@ -23,19 +22,14 @@ function useCompareMap(containerRef: React.RefObject<HTMLDivElement | null>) {
   return map;
 }
 
-// `sourcesReady` gates layer-adding until addBaseSources has actually run on
-// this map — without it, addLayerToMap can fire while the async base-source
-// fetch is still in flight and throw ("There is no source with ID 'blocks'"),
-// which (uncaught, inside a useEffect) can crash the whole compare view.
-function useForcedLayer(
-  map: MapLibreMap | null,
-  sourcesReady: boolean,
-  indicators: IndicatorTable | null,
-  layerId: string | null,
-) {
+// `sourcesReady` gates layer-adding until addBaseSources has actually run on this map
+// — without it, addLayerToMap can fire before the 'blocks'/'districts' sources exist
+// and throw ("There is no source with ID 'blocks'"), which (uncaught, inside a
+// useEffect) can crash the whole compare view.
+function useForcedLayer(map: MapLibreMap | null, sourcesReady: boolean, layerId: string | null) {
   const currentRef = useRef<string | null>(null);
   useEffect(() => {
-    if (!map || !sourcesReady || !indicators) return;
+    if (!map || !sourcesReady) return;
     if (currentRef.current) {
       removeLayerFromMap(map, currentRef.current);
       currentRef.current = null;
@@ -43,11 +37,11 @@ function useForcedLayer(
     if (layerId) {
       const config = LAYERS_BY_ID[layerId];
       if (config) {
-        addLayerToMap(map, config, indicators, config.defaultOpacity);
+        addLayerToMap(map, config, config.defaultOpacity);
         currentRef.current = layerId;
       }
     }
-  }, [map, sourcesReady, indicators, layerId]);
+  }, [map, sourcesReady, layerId]);
 }
 
 export function SyncedMapPair({ leftLayerId, rightLayerId }: { leftLayerId: string | null; rightLayerId: string | null }) {
@@ -55,28 +49,15 @@ export function SyncedMapPair({ leftLayerId, rightLayerId }: { leftLayerId: stri
   const rightContainer = useRef<HTMLDivElement>(null);
   const leftMap = useCompareMap(leftContainer);
   const rightMap = useCompareMap(rightContainer);
-  const [indicators, setIndicators] = useState<IndicatorTable | null>(null);
   const [sourcesReady, setSourcesReady] = useState(false);
   const [sliderPct, setSliderPct] = useState(50);
   const syncingRef = useRef(false);
 
   useEffect(() => {
-    void loadIndicators().then(setIndicators);
-  }, []);
-
-  useEffect(() => {
     if (!leftMap || !rightMap) return;
-    let cancelled = false;
-    setSourcesReady(false);
-    void loadBaseSourceData().then((data) => {
-      if (cancelled) return;
-      addBaseSources(leftMap, data);
-      addBaseSources(rightMap, data);
-      setSourcesReady(true);
-    });
-    return () => {
-      cancelled = true;
-    };
+    addBaseSources(leftMap);
+    addBaseSources(rightMap);
+    setSourcesReady(true);
   }, [leftMap, rightMap]);
 
   // Mirror pan/zoom between the two maps, guarding against feedback loops.
@@ -100,8 +81,8 @@ export function SyncedMapPair({ leftLayerId, rightLayerId }: { leftLayerId: stri
     };
   }, [leftMap, rightMap]);
 
-  useForcedLayer(leftMap, sourcesReady, indicators, leftLayerId);
-  useForcedLayer(rightMap, sourcesReady, indicators, rightLayerId);
+  useForcedLayer(leftMap, sourcesReady, leftLayerId);
+  useForcedLayer(rightMap, sourcesReady, rightLayerId);
 
   function handleDividerDrag(e: React.PointerEvent<HTMLDivElement>) {
     const container = e.currentTarget.parentElement;

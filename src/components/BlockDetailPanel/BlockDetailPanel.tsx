@@ -1,24 +1,34 @@
 import { useEffect, useState } from 'react';
 import { useMapStore } from '../../state/mapStore';
-import { loadBlockNames, loadIndicators, type BlockIdentity, type IndicatorTable } from '../../lib/data';
+import { loadBlockNames, loadBlockInfo, type BlockIdentity } from '../../lib/data';
 import { BlockIndicatorChart } from './BlockIndicatorChart';
 
 export function BlockDetailPanel() {
   const selectedBlock = useMapStore((s) => s.selectedBlock);
   const selectBlock = useMapStore((s) => s.selectBlock);
   const activeLayers = useMapStore((s) => s.activeLayers);
-  const [indicators, setIndicators] = useState<IndicatorTable | null>(null);
+  const [values, setValues] = useState<Record<string, number>>({});
   const [blockNames, setBlockNames] = useState<Record<string, BlockIdentity> | null>(null);
 
   useEffect(() => {
-    void loadIndicators().then(setIndicators);
     void loadBlockNames().then(setBlockNames);
   }, []);
+
+  useEffect(() => {
+    if (!selectedBlock) return;
+    let cancelled = false;
+    setValues({});
+    void loadBlockInfo(selectedBlock).then((info) => {
+      if (!cancelled) setValues(info.values);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [selectedBlock]);
 
   if (!selectedBlock) return null;
 
   const identity = blockNames?.[selectedBlock];
-  const values = indicators?.[selectedBlock] ?? {};
 
   return (
     <div className="w-96 max-w-[calc(100vw-2rem)] rounded-lg border border-slate-200 bg-white shadow-xl">
