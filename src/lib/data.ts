@@ -1,5 +1,5 @@
 import type { FeatureCollection } from 'geojson';
-import { withBase } from './basePath';
+import { apiFetch } from './apiClient';
 
 export type IndicatorTable = Record<string, Record<string, number>>;
 export type CentroidTable = Record<string, [number, number]>;
@@ -10,29 +10,31 @@ let indicatorsPromise: Promise<IndicatorTable> | null = null;
 let centroidsPromise: Promise<CentroidTable> | null = null;
 const standaloneGeometryPromises = new Map<string, Promise<FeatureCollection>>();
 
-async function fetchJSON<T>(url: string): Promise<T> {
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+async function fetchJSON<T>(path: string): Promise<T> {
+  const res = await apiFetch(path);
+  if (!res.ok) throw new Error(`Failed to fetch ${path}: ${res.status}`);
   return res.json() as Promise<T>;
 }
 
 export function loadBlocks(): Promise<FeatureCollection> {
-  blocksPromise ??= fetchJSON(withBase('/data/blocks.geojson'));
+  blocksPromise ??= fetchJSON('/api/data/blocks.geojson');
   return blocksPromise;
 }
 
 export function loadDistricts(): Promise<FeatureCollection> {
-  districtsPromise ??= fetchJSON(withBase('/data/districts.geojson'));
+  districtsPromise ??= fetchJSON('/api/data/districts.geojson');
   return districtsPromise;
 }
 
+// TEMPORARY: served as a gated bulk file until Phase B's raster tile pipeline ships
+// (see the plan doc) — at that point this goes away in favor of per-block lookups.
 export function loadIndicators(): Promise<IndicatorTable> {
-  indicatorsPromise ??= fetchJSON(withBase('/data/indicators.json'));
+  indicatorsPromise ??= fetchJSON('/api/data/indicators.json');
   return indicatorsPromise;
 }
 
 export function loadCentroids(): Promise<CentroidTable> {
-  centroidsPromise ??= fetchJSON(withBase('/data/centroids.json'));
+  centroidsPromise ??= fetchJSON('/api/data/centroids.json');
   return centroidsPromise;
 }
 
@@ -41,7 +43,7 @@ export function loadCentroids(): Promise<CentroidTable> {
 // point/line/polygon layers alike, cached per file path.
 export function loadStandaloneGeometry(file: string): Promise<FeatureCollection> {
   if (!standaloneGeometryPromises.has(file)) {
-    standaloneGeometryPromises.set(file, fetchJSON(withBase(`/data/${file}`)));
+    standaloneGeometryPromises.set(file, fetchJSON(`/api/data/${file}`));
   }
   return standaloneGeometryPromises.get(file)!;
 }
