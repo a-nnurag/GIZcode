@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: atlas-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: https://a-nnurag.github.io,http://localhost:5173
+      - key: PORT
+        value: 8787

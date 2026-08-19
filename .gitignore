@@ -12,9 +12,8 @@ dist
 dist-ssr
 *.local
 
-# Backend (server/) secrets and generated tile archives
+# Backend (server/) secrets
 server/.env
-server/tiles/*.pmtiles
 
 # Editor directories and files
 .vscode/*
