@@ -1,10 +1,38 @@
 [
   {
+    "id": "hazard_multi_composite",
+    "label": "Multi-Hazard Risk Score (Composite)",
+    "category": "hazards",
+    "subgroup": null,
+    "pinned": true,
+    "sourceShapefile": "Hazards/Block Wise Irrigation Source Risk Map.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      10.1136363636,
+      20.9090909091,
+      32.2222222222
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": true,
+    "description": "Multi-Hazard Risk Score (Composite) by block, sourced from Hazards/Block Wise Irrigation Source Risk Map.shp.",
+    "dataQualityNote": "No equivalent multi-hazard composite shapefile exists in Portal data_1/Hazards (only 4 individual risk-type files) — stays on the original GIS Database source until a replacement is provided. Source file is named 'Block Wise Irrigation Source Risk Map.shp' but contains no irrigation-specific data; see blocks.geojson's own sourcing note in 02-extract-blocks.mjs for why this file's attributes (but not its geometry) are trusted."
+  },
+  {
     "id": "hazard_drought",
     "label": "Drought Risk",
     "category": "hazards",
+    "subgroup": "drought",
     "pinned": false,
-    "sourceShapefile": "Hazards/Block Wise Drought Risk.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Hazards/Block Wise Drought Risk.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
@@ -22,24 +50,24 @@
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Drought Risk by block, sourced from Hazards/Block Wise Drought Risk.shp.",
-    "dataQualityNote": null,
-    "subgroup": "drought"
+    "description": "Drought Risk by block, sourced from Portal data_1/Portal data_1/Hazards/Block Wise Drought Risk.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "hazard_extreme_rainfall",
     "label": "Extreme Rainfall Risk",
     "category": "hazards",
+    "subgroup": "extreme_rainfall",
     "pinned": false,
     "sourceShapefile": "Hazards/Block Wise Extreme Rainfall.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#DBEAFE",
-      "#93C5FD",
-      "#3B82F6",
-      "#1D4ED8"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
       6.66666666667,
@@ -50,15 +78,15 @@
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Extreme Rainfall Risk by block, sourced from Hazards/Block Wise Extreme Rainfall.shp.",
-    "dataQualityNote": null,
-    "subgroup": "extreme_rainfall"
+    "dataQualityNote": "No block-wise extreme-rainfall shapefile exists in Portal data_1/Hazards — that folder only has raster-based R90p/RX5day indices instead (see hazard_extreme_rainfall_r90p/rx5d in raster-map.json). Stays on the original GIS Database source for now; consider whether this block-wise layer is still needed alongside the new raster indices."
   },
   {
     "id": "hazard_flood",
     "label": "Flood Risk",
     "category": "hazards",
+    "subgroup": "flood",
     "pinned": false,
-    "sourceShapefile": "Hazards/Block Wise Flood Risk.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Hazards/Block Wise Flood Risk.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
@@ -76,16 +104,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Flood Risk by block, sourced from Hazards/Block Wise Flood Risk.shp.",
-    "dataQualityNote": null,
-    "subgroup": "flood"
+    "description": "Flood Risk by block, sourced from Portal data_1/Portal data_1/Hazards/Block Wise Flood Risk.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "hazard_forest_fire",
     "label": "Forest Fire Risk",
     "category": "hazards",
+    "subgroup": "forest_fire",
     "pinned": false,
-    "sourceShapefile": "Hazards/Block Wise Forest Fire Risk.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Hazards/Block Wise Forest Fire.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
@@ -103,24 +131,24 @@
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Forest Fire Risk by block, sourced from Hazards/Block Wise Forest Fire Risk.shp.",
-    "dataQualityNote": null,
-    "subgroup": "forest_fire"
+    "description": "Forest Fire Risk by block, sourced from Portal data_1/Portal data_1/Hazards/Block Wise Forest Fire.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "hazard_heatwave",
     "label": "Heatwave Susceptibility",
     "category": "hazards",
+    "subgroup": "extreme_temperature",
     "pinned": false,
     "sourceShapefile": "Hazards/Block Wise Heatwave Suspectibility.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#FEE2E2",
-      "#FCA5A5",
-      "#EF4444",
-      "#B91C1C"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
       16.577540107,
@@ -131,15 +159,15 @@
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Heatwave Susceptibility by block, sourced from Hazards/Block Wise Heatwave Suspectibility.shp.",
-    "dataQualityNote": null,
-    "subgroup": "extreme_temperature"
+    "dataQualityNote": "No block-wise heatwave shapefile exists in Portal data_1 — closest new analogues are the TX90p/TN90p extreme-temperature rasters (hazard_extreme_temp_tx90p/tn90p in raster-map.json). Stays on the original GIS Database source for now; consider retiring this layer once TX90p/TN90p are established as the replacement."
   },
   {
     "id": "hazard_landslide",
     "label": "Landslide Risk",
     "category": "hazards",
+    "subgroup": "landslide",
     "pinned": false,
-    "sourceShapefile": "Hazards/Block Wise Landslide.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Hazards/Block Wise Landslide.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
@@ -157,190 +185,178 @@
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Landslide Risk by block, sourced from Hazards/Block Wise Landslide.shp.",
-    "dataQualityNote": null,
-    "subgroup": "landslide"
+    "description": "Landslide Risk by block, sourced from Portal data_1/Portal data_1/Hazards/Block Wise Landslide.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "agri_drought",
     "label": "Agriculture Exposed to Drought",
     "category": "exposure",
+    "subgroup": "agriculture",
     "pinned": false,
     "sourceShapefile": "Agriculture & Allied Sector/Agriculture exposed to Drought.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      20.6,
-      38.7,
-      53,
-      71.8
+      25.4734452591,
+      50.3979614381,
+      73.3021476099
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
     "description": "Agriculture Exposed to Drought by block, sourced from Agriculture & Allied Sector/Agriculture exposed to Drought.shp.",
-    "dataQualityNote": null,
-    "subgroup": "agriculture"
+    "dataQualityNote": "No equivalent file in Portal data_1/Exposure/Agriculture (only TX90p/floods/landslide are provided) — stays on the original GIS Database source."
   },
   {
     "id": "agri_extreme_rainfall",
     "label": "Agriculture Exposed to Extreme Rainfall",
     "category": "exposure",
+    "subgroup": "agriculture",
     "pinned": false,
     "sourceShapefile": "Agriculture & Allied Sector/Agriculture exposed to Extreme Rainfall.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0,
-      0,
-      5.2,
-      78.7
+      18.2755599681,
+      46.3556052321,
+      86.428871383
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
     "description": "Agriculture Exposed to Extreme Rainfall by block, sourced from Agriculture & Allied Sector/Agriculture exposed to Extreme Rainfall.shp.",
-    "dataQualityNote": null,
-    "subgroup": "agriculture"
+    "dataQualityNote": "No equivalent file in Portal data_1/Exposure/Agriculture — stays on the original GIS Database source."
   },
   {
     "id": "agri_flood",
     "label": "Agriculture Exposed to Floods",
     "category": "exposure",
+    "subgroup": "agriculture",
     "pinned": false,
-    "sourceShapefile": "Agriculture & Allied Sector/Agriculture Exposed to Floods.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Agriculture/Agricultural land exposed to floods.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0,
-      0.7,
-      3.1,
-      12.4
+      9.1076158179,
+      25.9799487874,
+      60.8555825278
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
-    "description": "Agriculture Exposed to Floods by block, sourced from Agriculture & Allied Sector/Agriculture Exposed to Floods.shp.",
-    "dataQualityNote": null,
-    "subgroup": "agriculture"
+    "description": "Agriculture Exposed to Floods by block, sourced from Portal data_1/Portal data_1/Exposure/Agriculture/Agricultural land exposed to floods.shp.",
+    "dataQualityNote": "Sample values (e.g. 0.77, 0.245) look inconsistent in scale with other 0-100 percentage fields in this delivery — verify against source before trusting as a plain percentage."
   },
   {
     "id": "agri_heatwave",
-    "label": "Agriculture Exposed to Heatwave",
+    "label": "Agriculture Exposed to Extreme Heat (TX90p)",
     "category": "exposure",
+    "subgroup": "agriculture",
     "pinned": false,
-    "sourceShapefile": "Agriculture & Allied Sector/Agriculture exposed to Heatwave.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Agriculture/Agricultural land exposed to TX90p.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      12,
-      58.9,
-      99.7,
-      100
+      12.1315322495,
+      45.0327501837,
+      77.7313107025
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
-    "description": "Agriculture Exposed to Heatwave by block, sourced from Agriculture & Allied Sector/Agriculture exposed to Heatwave.shp.",
-    "dataQualityNote": null,
-    "subgroup": "agriculture"
+    "description": "Agriculture Exposed to Extreme Heat (TX90p) by block, sourced from Portal data_1/Portal data_1/Exposure/Agriculture/Agricultural land exposed to TX90p.shp.",
+    "dataQualityNote": "Portal data_1 has no direct 'heatwave' exposure file for agriculture — repointed to the new TX90p (warm-days frequency) exposure file as the closest replacement; label updated to reflect the new source metric."
   },
   {
     "id": "agri_landslide",
     "label": "Agriculture Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "agriculture",
     "pinned": false,
-    "sourceShapefile": "Agriculture & Allied Sector/Agriculture exposed to Landslide.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Agriculture/Agricultural land exposed to landslide.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0,
-      0.6,
-      4.6,
-      15.5
+      6.99873647931,
+      20.8404565688,
+      36.3924419056
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
-    "description": "Agriculture Exposed to Landslide by block, sourced from Agriculture & Allied Sector/Agriculture exposed to Landslide.shp.",
-    "dataQualityNote": null,
-    "subgroup": "agriculture"
+    "description": "Agriculture Exposed to Landslide by block, sourced from Portal data_1/Portal data_1/Exposure/Agriculture/Agricultural land exposed to landslide.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "agri_rainfed_stress",
     "label": "Rainfed Agriculture Stress",
     "category": "exposure",
+    "subgroup": "agriculture",
     "pinned": false,
     "sourceShapefile": "Agriculture & Allied Sector/Rainfed Agriculture Stress.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      1.7,
-      4.3,
-      8.3,
-      19.4
+      8.50394994455,
+      21.2703148726,
+      47.3554979529
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
     "description": "Rainfed Agriculture Stress by block, sourced from Agriculture & Allied Sector/Rainfed Agriculture Stress.shp.",
-    "dataQualityNote": null,
-    "subgroup": "agriculture"
+    "dataQualityNote": "No equivalent file in Portal data_1/Exposure/Agriculture — stays on the original GIS Database source."
   },
   {
     "id": "energy_power_flood",
     "label": "Power Stations Exposed to Flood",
     "category": "exposure",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Energy/Power Stations Exposed to Flood.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Energy/Power Stations exposed to flood.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -358,16 +374,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Power Stations Exposed to Flood by block, sourced from Energy/Power Stations Exposed to Flood.shp.",
-    "dataQualityNote": null,
-    "subgroup": "energy"
+    "description": "Power Stations Exposed to Flood by block, sourced from Portal data_1/Portal data_1/Exposure/Energy/Power Stations exposed to flood.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "energy_power_forest_fire",
     "label": "Power Stations Exposed to Forest Fire",
     "category": "exposure",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Energy/Power Stations Exposed to Forest Fire.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Energy/Power Stations exposed to forest fire.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -385,16 +401,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Power Stations Exposed to Forest Fire by block, sourced from Energy/Power Stations Exposed to Forest Fire.shp.",
-    "dataQualityNote": null,
-    "subgroup": "energy"
+    "description": "Power Stations Exposed to Forest Fire by block, sourced from Portal data_1/Portal data_1/Exposure/Energy/Power Stations exposed to forest fire.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "energy_power_extreme_rainfall",
     "label": "Power Stations Exposed to Extreme Rainfall",
     "category": "exposure",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Energy/Power Stations exposed to Extreme Rainfall.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Energy/Power Stations exposed to extreme rainfall.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -412,16 +428,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Power Stations Exposed to Extreme Rainfall by block, sourced from Energy/Power Stations exposed to Extreme Rainfall.shp.",
-    "dataQualityNote": null,
-    "subgroup": "energy"
+    "description": "Power Stations Exposed to Extreme Rainfall by block, sourced from Portal data_1/Portal data_1/Exposure/Energy/Power Stations exposed to extreme rainfall.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "energy_power_landslide",
     "label": "Power Stations Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Energy/Power Stations exposed to Landslide.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Energy/Power Stations exposed to landslide.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -439,16 +455,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Power Stations Exposed to Landslide by block, sourced from Energy/Power Stations exposed to Landslide.shp.",
-    "dataQualityNote": null,
-    "subgroup": "energy"
+    "description": "Power Stations Exposed to Landslide by block, sourced from Portal data_1/Portal data_1/Exposure/Energy/Power Stations exposed to landslide.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "energy_transmission_extreme_rainfall",
     "label": "Transmission Lines Exposed to Extreme Rainfall",
     "category": "exposure",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Energy/Transmission Lines exposed to Extreme Rainfall.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Energy/Transmission and Distribution line exposed to Extreme Rainfall.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -466,16 +482,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Transmission Lines Exposed to Extreme Rainfall by block, sourced from Energy/Transmission Lines exposed to Extreme Rainfall.shp.",
-    "dataQualityNote": null,
-    "subgroup": "energy"
+    "description": "Transmission Lines Exposed to Extreme Rainfall by block, sourced from Portal data_1/Portal data_1/Exposure/Energy/Transmission and Distribution line exposed to Extreme Rainfall.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "energy_transmission_flood",
     "label": "Transmission Lines Exposed to Flood",
     "category": "exposure",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Energy/Transmission Lines exposed to Flood.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Energy/Transmission and Distribution line exposed to floods.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -493,14 +509,14 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Transmission Lines Exposed to Flood by block, sourced from Energy/Transmission Lines exposed to Flood.shp.",
-    "dataQualityNote": "Only a point-count-based PCT field is present (max 41.67% across blocks) — no line-length-based percentage field exists in this file, unlike the Forest Fire variant.",
-    "subgroup": "energy"
+    "description": "Transmission Lines Exposed to Flood by block, sourced from Portal data_1/Portal data_1/Exposure/Energy/Transmission and Distribution line exposed to floods.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "energy_transmission_forest_fire",
     "label": "Transmission Lines Exposed to Forest Fire",
     "category": "exposure",
+    "subgroup": "energy",
     "pinned": false,
     "sourceShapefile": "Energy/Transmission Lines exposed to Forest Fire.shp",
     "geometrySource": "centroids",
@@ -521,15 +537,15 @@
     "defaultOpacity": 0.9,
     "defaultVisible": false,
     "description": "Transmission Lines Exposed to Forest Fire by block, sourced from Energy/Transmission Lines exposed to Forest Fire.shp.",
-    "dataQualityNote": "File carries two candidate fields: PCT (point-count based, max 41.67%) and pct2 (line-length based, max 100%). Using pct2 as the more representative exposure measure for a line feature; PCT is a leftover intermediate column.",
-    "subgroup": "energy"
+    "dataQualityNote": "HELD BACK from the Portal data_1 refresh: the new 'Transmission and Distribution line exposed to Forest fire.shp' has two very different candidate fields (pct2=86.96, PCT=8.696, ~10x apart) and needs verification against source before switching over. Staying on the original GIS Database source in the meantime, which already resolved the same pct/pct2 ambiguity for its own copy of this file (see this note's original reasoning: pct2 is line-length based and was judged more representative than the point-count based PCT)."
   },
   {
     "id": "energy_transmission_landslide",
     "label": "Transmission Lines Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Energy/Transmission Lines exposed to Landslide.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Energy/Transmission and Distribution line exposed to Landslide.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -547,130 +563,215 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Transmission Lines Exposed to Landslide by block, sourced from Energy/Transmission Lines exposed to Landslide.shp.",
-    "dataQualityNote": null,
-    "subgroup": "energy"
+    "description": "Transmission Lines Exposed to Landslide by block, sourced from Portal data_1/Portal data_1/Exposure/Energy/Transmission and Distribution line exposed to Landslide.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "forest_protected_area_forest_fire",
     "label": "Protected Area Exposed to Forest Fire",
     "category": "exposure",
+    "subgroup": "forest",
     "pinned": false,
-    "sourceShapefile": "Forest & Biodiversity/Protected Area Exposed to Forest Fire.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Protected area exposed to forest fire.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0,
-      0,
-      0,
-      76
+      16.990572677,
+      44.1066456423,
+      75.0814680583
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
-    "description": "Protected Area Exposed to Forest Fire by block, sourced from Forest & Biodiversity/Protected Area Exposed to Forest Fire.shp.",
-    "dataQualityNote": null,
-    "subgroup": "forest"
+    "description": "Protected Area Exposed to Forest Fire by block, sourced from Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Protected area exposed to forest fire.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "forest_protected_area_landslide",
     "label": "Protected Area Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "forest",
     "pinned": false,
-    "sourceShapefile": "Forest & Biodiversity/Protected Area Exposed to Landslide.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Protected area exposed to landslide.shp",
     "geometrySource": "blocks",
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0,
-      0,
-      0,
-      0.3
+      1.22704778692,
+      4.38310994525,
+      9.7499078252
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
-    "description": "Protected Area Exposed to Landslide by block, sourced from Forest & Biodiversity/Protected Area Exposed to Landslide.shp.",
-    "dataQualityNote": null,
-    "subgroup": "forest"
+    "description": "Protected Area Exposed to Landslide by block, sourced from Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Protected area exposed to landslide.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "forest_protected_multi_hazard",
     "label": "Protected Areas Exposed to Multiple Hazards",
     "category": "exposure",
+    "subgroup": "forest",
     "pinned": false,
-    "sourceShapefile": "Forest & Biodiversity/Protected Areas exposed to More than one hazard.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Protected area exposed to floods.shp",
     "geometrySource": "blocks",
     "unit": "count",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#E8F5E9",
+      "#A5D6A7",
+      "#FBC02D",
+      "#F57C00",
+      "#EF5350",
+      "#D32F2F"
     ],
     "breaks": [
-      0,
-      0,
+      1,
       2,
-      4
+      3,
+      4,
+      5
     ],
-    "classification": "quantile",
+    "classification": "fixed",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
     "description": "Count (0-5) of distinct hazard types (extreme rainfall, flood, heatwave, landslide, forest fire) affecting protected areas in this block.",
-    "dataQualityNote": null,
-    "subgroup": "forest"
+    "dataQualityNote": "Source file's name says 'exposed to floods' but its RISK field is actually a 0-5 composite across all hazard-flag columns in the same row (Extreme_Ra/Flood/Heatwave/Landslide/Forest) — this looks like a naming artifact from the source, not a flood-specific score; verify intent before relying on it."
   },
   {
     "id": "forest_wildlife_corridor_risk",
     "label": "Wildlife Corridor Risk",
     "category": "exposure",
+    "subgroup": "forest",
     "pinned": false,
     "sourceShapefile": "Forest & Biodiversity/Wildlife Corridor Risk.shp",
     "geometrySource": "blocks",
     "unit": "count",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#E8F5E9",
+      "#A5D6A7",
+      "#FBC02D",
+      "#F57C00",
+      "#EF5350",
+      "#D32F2F"
     ],
     "breaks": [
       1,
       2,
-      2,
-      3
+      3,
+      4,
+      5
+    ],
+    "classification": "fixed",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Count (0-5) of distinct hazard types affecting wildlife corridors in this block.",
+    "dataQualityNote": "Asset layers/Wildlife Corridors.shp has a real 'risk' field (0-5) that looks like the intended replacement, but that file has NO bpcode field at all — it's raw KML-import corridor geometry (FolderPath/SymbolID/AltMode are Google Earth artifacts), not block-joined data. Building this from the new source needs a small new spatial-join step (corridor-vs-block polygon test), not a plain attribute join — flagged as follow-up work, not done here. Stays on the original GIS Database source in the meantime."
+  },
+  {
+    "id": "forest_wildlife_flood",
+    "label": "Wildlife Corridors Exposed to Flood",
+    "category": "exposure",
+    "subgroup": "forest",
+    "pinned": false,
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Wildlife corridors exposed to floods.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      16.6666666667,
+      46.6666666667,
+      75
     ],
     "classification": "quantile",
     "defaultOpacity": 0.7,
     "defaultVisible": false,
+    "description": "Wildlife Corridors Exposed to Flood by block, sourced from Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Wildlife corridors exposed to floods.shp.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "forest_wildlife_landslide",
+    "label": "Wildlife Corridors Exposed to Landslide",
+    "category": "exposure",
+    "subgroup": "forest",
+    "pinned": false,
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Wildlife corridors exposed to landslide.shp",
+    "geometrySource": "blocks",
+    "unit": "%",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.97674418605,
+      33.3333333333,
+      75
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
+    "description": "Wildlife Corridors Exposed to Landslide by block, sourced from Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Wildlife corridors exposed to landslide.shp.",
+    "dataQualityNote": "Source field is named 'pcy' (not 'pct'), the same naming quirk as the original GIS Database copy of this file. Value range matches every other percentage field, so treated as a percentage."
+  },
+  {
+    "id": "forest_wildlife_corridor_forest_fire",
+    "label": "Wildlife Corridors Exposed to Forest Fire",
+    "category": "exposure",
+    "subgroup": "forest",
+    "pinned": false,
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Forest & biodiversity/Wildlife corridors exposed to forest fire.shp",
+    "geometrySource": "blocks",
+    "unit": "count",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#E8F5E9",
+      "#A5D6A7",
+      "#FBC02D",
+      "#F57C00",
+      "#EF5350",
+      "#D32F2F"
+    ],
+    "breaks": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "classification": "fixed",
+    "defaultOpacity": 0.7,
+    "defaultVisible": false,
     "description": "Count (0-5) of distinct hazard types affecting wildlife corridors in this block.",
-    "dataQualityNote": null,
-    "subgroup": "forest"
+    "dataQualityNote": "New indicator, no equivalent in the previous dataset. Full value range confirmed 0-5 across all blocks, matching the other Risk-field count layers."
   },
   {
     "id": "health_ayush_forest_fire_zone",
     "label": "Ayush Facilities in Forest Fire Risk Zone",
     "category": "exposure",
+    "subgroup": "healthcare",
     "pinned": false,
     "sourceShapefile": "Health/Ayush Forest Fire Health Risk Zone.shp",
     "geometrySource": "centroids",
@@ -691,13 +792,13 @@
     "defaultOpacity": 0.9,
     "defaultVisible": false,
     "description": "Ayush Facilities in Forest Fire Risk Zone by block, sourced from Health/Ayush Forest Fire Health Risk Zone.shp.",
-    "dataQualityNote": null,
-    "subgroup": "healthcare"
+    "dataQualityNote": "No equivalent Ayush-specific file in Portal data_1/Exposure/Healthcare (only generic 'Healthcare facilities' files are provided) — stays on the original GIS Database source."
   },
   {
     "id": "health_ayush_facility_flood",
     "label": "Ayush Facilities Exposed to Flood",
     "category": "exposure",
+    "subgroup": "healthcare",
     "pinned": false,
     "sourceShapefile": "Health/Ayush Health Facility Flood Exposure.shp",
     "geometrySource": "centroids",
@@ -718,13 +819,13 @@
     "defaultOpacity": 0.9,
     "defaultVisible": false,
     "description": "Ayush Facilities Exposed to Flood by block, sourced from Health/Ayush Health Facility Flood Exposure.shp.",
-    "dataQualityNote": null,
-    "subgroup": "healthcare"
+    "dataQualityNote": "No equivalent Ayush-specific file in Portal data_1 — stays on the original GIS Database source."
   },
   {
     "id": "health_ayush_facility_landslide",
     "label": "Ayush Facilities Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "healthcare",
     "pinned": false,
     "sourceShapefile": "Health/Ayush Health Facility Landslide Exposure.shp",
     "geometrySource": "centroids",
@@ -745,13 +846,13 @@
     "defaultOpacity": 0.9,
     "defaultVisible": false,
     "description": "Ayush Facilities Exposed to Landslide by block, sourced from Health/Ayush Health Facility Landslide Exposure.shp.",
-    "dataQualityNote": null,
-    "subgroup": "healthcare"
+    "dataQualityNote": "No equivalent Ayush-specific file in Portal data_1 — stays on the original GIS Database source."
   },
   {
     "id": "health_access_disruption",
     "label": "Healthcare Access Disruption",
     "category": "exposure",
+    "subgroup": "healthcare",
     "pinned": false,
     "sourceShapefile": "Health/Healthcare Access Disruption based on Number of Hospitals.shp",
     "geometrySource": "centroids",
@@ -772,15 +873,15 @@
     "defaultOpacity": 0.9,
     "defaultVisible": false,
     "description": "Healthcare Access Disruption by block, sourced from Health/Healthcare Access Disruption based on Number of Hospitals.shp.",
-    "dataQualityNote": "Source field is named 'pcy' (not 'pct'). Value range across all blocks (0-100) matches every other percentage field in the dataset, so treated as a percentage; confirm exact wording/semantics with the data provider before public launch.",
-    "subgroup": "healthcare"
+    "dataQualityNote": "No equivalent file in Portal data_1/Exposure/Healthcare — stays on the original GIS Database source. Source field is named 'pcy' (not 'pct'); value range (0-100) matches every other percentage field, so treated as a percentage."
   },
   {
     "id": "health_hospitals_flood",
     "label": "Hospitals Exposed to Flood",
     "category": "exposure",
+    "subgroup": "healthcare",
     "pinned": false,
-    "sourceShapefile": "Health/Hospitals exposed to Flood.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Healthcare/Healthcare facilities exposed to Flood.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -798,16 +899,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Hospitals Exposed to Flood by block, sourced from Health/Hospitals exposed to Flood.shp.",
-    "dataQualityNote": null,
-    "subgroup": "healthcare"
+    "description": "Hospitals Exposed to Flood by block, sourced from Portal data_1/Portal data_1/Exposure/Healthcare/Healthcare facilities exposed to Flood.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "health_hospitals_forest_fire",
     "label": "Hospitals Exposed to Forest Fire",
     "category": "exposure",
+    "subgroup": "healthcare",
     "pinned": false,
-    "sourceShapefile": "Health/Hospitals exposed to Forest Fire.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Healthcare/Healthcare facilities exposed to forest fire.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -825,16 +926,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Hospitals Exposed to Forest Fire by block, sourced from Health/Hospitals exposed to Forest Fire.shp.",
-    "dataQualityNote": null,
-    "subgroup": "healthcare"
+    "description": "Hospitals Exposed to Forest Fire by block, sourced from Portal data_1/Portal data_1/Exposure/Healthcare/Healthcare facilities exposed to forest fire.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "health_hospitals_landslide",
     "label": "Hospitals Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "healthcare",
     "pinned": false,
-    "sourceShapefile": "Health/Hospitals exposed to Landslide.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Healthcare/Healthcare facilities exposed to landslide.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -852,74 +953,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Hospitals Exposed to Landslide by block, sourced from Health/Hospitals exposed to Landslide.shp.",
-    "dataQualityNote": null,
-    "subgroup": "healthcare"
-  },
-  {
-    "id": "forest_wildlife_flood",
-    "label": "Wildlife Corridors Exposed to Flood",
-    "category": "exposure",
-    "pinned": false,
-    "sourceShapefile": "Forest & Biodiversity/Wildlife corridors exposed to floods.shp",
-    "geometrySource": "blocks",
-    "unit": "%",
-    "renderType": "choropleth",
-    "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
-    ],
-    "breaks": [
-      0,
-      33.3,
-      59,
-      66.7
-    ],
-    "classification": "quantile",
-    "defaultOpacity": 0.7,
-    "defaultVisible": false,
-    "description": "Wildlife Corridors Exposed to Flood by block, sourced from Forest & Biodiversity/Wildlife corridors exposed to floods.shp.",
-    "dataQualityNote": null,
-    "subgroup": "forest"
-  },
-  {
-    "id": "forest_wildlife_landslide",
-    "label": "Wildlife Corridors Exposed to Landslide",
-    "category": "exposure",
-    "pinned": false,
-    "sourceShapefile": "Forest & Biodiversity/Wildlife corridors exposed to landslide.shp",
-    "geometrySource": "blocks",
-    "unit": "%",
-    "renderType": "choropleth",
-    "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
-    ],
-    "breaks": [
-      0,
-      0,
-      55,
-      100
-    ],
-    "classification": "quantile",
-    "defaultOpacity": 0.7,
-    "defaultVisible": false,
-    "description": "Wildlife Corridors Exposed to Landslide by block, sourced from Forest & Biodiversity/Wildlife corridors exposed to landslide.shp.",
-    "dataQualityNote": "Source field is named 'pcy' (not 'pct'), the same naming quirk seen in Health/Healthcare Access Disruption. Value range matches every other percentage field, so treated as a percentage.",
-    "subgroup": "forest"
+    "description": "Hospitals Exposed to Landslide by block, sourced from Portal data_1/Portal data_1/Exposure/Healthcare/Healthcare facilities exposed to landslide.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "road_flood",
     "label": "Roads Exposed to Flood",
     "category": "exposure",
+    "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Roads exposed to flood.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/roads/Roads exposed to flood.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -937,16 +980,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Roads Exposed to Flood by block, sourced from Infrastructure & Assets/Roads exposed to flood.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction rather than a 0-100 percentage like every other exposure layer in the dataset; scaled by 100 at extraction for consistency.",
-    "subgroup": "roads"
+    "description": "Roads Exposed to Flood by block, sourced from Portal data_1/Portal data_1/Exposure/roads/Roads exposed to flood.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction rather than a 0-100 percentage; scaled by 100 at extraction for consistency."
   },
   {
     "id": "road_forest_fire",
     "label": "Roads Exposed to Forest Fire",
     "category": "exposure",
+    "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Roads exposed to forest fire.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/roads/Roads exposed to forest fire.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -964,16 +1007,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Roads Exposed to Forest Fire by block, sourced from Infrastructure & Assets/Roads exposed to forest fire.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "roads"
+    "description": "Roads Exposed to Forest Fire by block, sourced from Portal data_1/Portal data_1/Exposure/roads/Roads exposed to forest fire.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers."
   },
   {
     "id": "road_landslide",
     "label": "Roads Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Roads exposed to landslide.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/roads/Roads exposed to landslide.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -991,16 +1034,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Roads Exposed to Landslide by block, sourced from Infrastructure & Assets/Roads exposed to landslide.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "roads"
+    "description": "Roads Exposed to Landslide by block, sourced from Portal data_1/Portal data_1/Exposure/roads/Roads exposed to landslide.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers."
   },
   {
     "id": "road_rainfall",
     "label": "Roads Exposed to Extreme Rainfall (RX1day)",
     "category": "exposure",
+    "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Roads exposed to rainfall.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/roads/Roads exposed to rainfall.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1018,16 +1061,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Roads Exposed to Extreme Rainfall (RX1day) by block, sourced from Infrastructure & Assets/Roads exposed to rainfall.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "roads"
+    "description": "Roads Exposed to Extreme Rainfall (RX1day) by block, sourced from Portal data_1/Portal data_1/Exposure/roads/Roads exposed to rainfall.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers. RX1day only exists in this delivery as this exposure-percentage field, not as a standalone hazard raster."
   },
   {
     "id": "road_settlements_steep_slope",
     "label": "Settlements Exposed to Steep Slope Along Roads",
     "category": "exposure",
+    "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Settlements exposed to steep slope along roads.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/roads/Settlements exposed to steep slope along roads.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1045,16 +1088,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Settlements Exposed to Steep Slope Along Roads by block, sourced from Infrastructure & Assets/Settlements exposed to steep slope along roads.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "roads"
+    "description": "Settlements Exposed to Steep Slope Along Roads by block, sourced from Portal data_1/Portal data_1/Exposure/roads/Settlements exposed to steep slope along roads.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers."
   },
   {
     "id": "tourism_extreme_rainfall",
     "label": "Tourist Sites Exposed to Extreme Rainfall (RX1day)",
     "category": "exposure",
+    "subgroup": "tourism",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to extreme rainfall.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to extreme rainfall.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1072,16 +1115,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Tourist Sites Exposed to Extreme Rainfall (RX1day) by block, sourced from Infrastructure & Assets/Tourist sites exposed to extreme rainfall.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "tourism"
+    "description": "Tourist Sites Exposed to Extreme Rainfall (RX1day) by block, sourced from Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to extreme rainfall.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers."
   },
   {
     "id": "tourism_flood",
     "label": "Tourist Sites Exposed to Flood",
     "category": "exposure",
+    "subgroup": "tourism",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to floods.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to floods.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1099,16 +1142,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Tourist Sites Exposed to Flood by block, sourced from Infrastructure & Assets/Tourist sites exposed to floods.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "tourism"
+    "description": "Tourist Sites Exposed to Flood by block, sourced from Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to floods.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers."
   },
   {
     "id": "tourism_forest_fire",
     "label": "Tourist Sites Exposed to Forest Fire",
     "category": "exposure",
+    "subgroup": "tourism",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to forest fire.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to forest fire.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1126,16 +1169,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Tourist Sites Exposed to Forest Fire by block, sourced from Infrastructure & Assets/Tourist sites exposed to forest fire.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "tourism"
+    "description": "Tourist Sites Exposed to Forest Fire by block, sourced from Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to forest fire.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers."
   },
   {
     "id": "tourism_landslide",
     "label": "Tourist Sites Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "tourism",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to landslide.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to landslide.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1153,16 +1196,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Tourist Sites Exposed to Landslide by block, sourced from Infrastructure & Assets/Tourist sites exposed to landslide.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "tourism"
+    "description": "Tourist Sites Exposed to Landslide by block, sourced from Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to landslide.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers."
   },
   {
     "id": "tourism_heat_tx90p",
     "label": "Tourist Sites Exposed to Extreme Heat (TX90p)",
     "category": "exposure",
+    "subgroup": "tourism",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Tourist sites exposed to TX90p.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to TX90p.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1180,16 +1223,16 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Tourist Sites Exposed to Extreme Heat (TX90p) by block, sourced from Infrastructure & Assets/Tourist sites exposed to TX90p.shp.",
-    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers.",
-    "subgroup": "tourism"
+    "description": "Tourist Sites Exposed to Extreme Heat (TX90p) by block, sourced from Portal data_1/Portal data_1/Exposure/Tourism/Tourist sites exposed to TX90p.shp.",
+    "dataQualityNote": "Source field is stored as a 0-1 fraction; scaled by 100 for consistency with other exposure layers."
   },
   {
     "id": "water_canal_flood",
     "label": "Canals Exposed to Flood",
     "category": "exposure",
+    "subgroup": "water",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Canal exposed to floods.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Water/Canal exposed to floods.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1207,14 +1250,14 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Canals Exposed to Flood by block, sourced from Infrastructure & Assets/Canal exposed to floods.shp.",
-    "dataQualityNote": null,
-    "subgroup": "water"
+    "description": "Canals Exposed to Flood by block, sourced from Portal data_1/Portal data_1/Exposure/Water/Canal exposed to floods.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "water_canal_landslide",
     "label": "Canals Exposed to Landslide",
     "category": "exposure",
+    "subgroup": "water",
     "pinned": false,
     "sourceShapefile": "Infrastructure & Assets/Canal exposed to landslide.shp",
     "geometrySource": "centroids",
@@ -1235,15 +1278,15 @@
     "defaultOpacity": 0.9,
     "defaultVisible": false,
     "description": "Canals Exposed to Landslide by block, sourced from Infrastructure & Assets/Canal exposed to landslide.shp.",
-    "dataQualityNote": "Source field is named 'Pct_Flood' (a leftover column name from the flood-layer template) despite this file covering landslide exposure; it is the only percentage field present and its values are block-specific, so used as-is.",
-    "subgroup": "water"
+    "dataQualityNote": "HELD BACK from the Portal data_1 refresh: the new 'Canal exposed to landslide.shp' reuses the exact field name AND values from the flood file, which looks like a possible copy-paste error in the source (stronger concern than the original GIS Database copy, whose note only observed a reused field NAME with distinct block-specific values). Staying on the original GIS Database source until verified."
   },
   {
     "id": "water_springs_drought",
     "label": "Springs Exposed to Drought",
     "category": "exposure",
+    "subgroup": "water",
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Springs exposed to drought.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Exposure/Water/Springs exposed to drought.shp",
     "geometrySource": "centroids",
     "unit": "%",
     "renderType": "proportional-dot",
@@ -1261,422 +1304,1023 @@
     "classification": "quantile",
     "defaultOpacity": 0.9,
     "defaultVisible": false,
-    "description": "Springs Exposed to Drought by block, sourced from Infrastructure & Assets/Springs exposed to drought.shp.",
-    "dataQualityNote": null,
-    "subgroup": "water"
+    "description": "Springs Exposed to Drought by block, sourced from Portal data_1/Portal data_1/Exposure/Water/Springs exposed to drought.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "risk_agriculture",
     "label": "Agriculture Risk Score",
     "category": "risk_scores",
+    "subgroup": "agriculture",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_agri_risk.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_agri_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      35.2,
-      47.2,
-      49.9,
-      52.3
+      37.9,
+      48.2,
+      54.7
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Agriculture Risk Score by block, sourced from Risk & Vulnerability/Block_agri_risk.shp.",
-    "dataQualityNote": null,
-    "subgroup": "agriculture"
+    "description": "Agriculture Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_agri_risk.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "risk_energy",
     "label": "Energy Risk Score",
     "category": "risk_scores",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_energy_Risk.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_energy_Risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      35.7,
-      52.1,
-      59.1,
-      64.3
+      27.8,
+      43.3,
+      62.1
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Energy Risk Score by block, sourced from Risk & Vulnerability/Block_energy_Risk.shp.",
-    "dataQualityNote": null,
-    "subgroup": "energy"
+    "description": "Energy Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_energy_Risk.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "risk_health",
     "label": "Health Risk Score",
     "category": "risk_scores",
+    "subgroup": "healthcare",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_health_risk.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_health_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      36.4,
-      50.3,
-      54.5,
-      56.5
+      39.2,
+      47.5,
+      55.5
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Health Risk Score by block, sourced from Risk & Vulnerability/Block_health_risk.shp.",
-    "dataQualityNote": null,
-    "subgroup": "healthcare"
+    "description": "Health Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_health_risk.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "risk_road",
     "label": "Roads Risk Score",
     "category": "risk_scores",
+    "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_road_risk.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_road_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      40.2,
-      49.3,
-      52.6,
-      56.8
+      22.6,
+      47.3,
+      57.5
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Roads Risk Score by block, sourced from Risk & Vulnerability/Block_road_risk.shp.",
-    "dataQualityNote": null,
-    "subgroup": "roads"
+    "description": "Roads Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_road_risk.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "risk_water",
     "label": "Water Risk Score",
     "category": "risk_scores",
+    "subgroup": "water",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_water_risk.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_water_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      36.5,
-      44.4,
-      47.9,
-      62.8
+      37.6,
+      53.2,
+      66.7
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Water Risk Score by block, sourced from Risk & Vulnerability/Block_water_risk.shp.",
-    "dataQualityNote": null,
-    "subgroup": "water"
+    "description": "Water Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_water_risk.shp.",
+    "dataQualityNote": null
   },
   {
     "id": "vul_agriculture",
     "label": "Agriculture Vulnerability Index",
     "category": "vulnerability_scores",
+    "subgroup": "agriculture",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_agri_vul.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_agri_vul.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0.4,
-      0.5,
-      0.6,
-      0.7
+      0.237,
+      0.505,
+      0.689
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null,
-    "subgroup": "agriculture"
+    "dataQualityNote": null
   },
   {
     "id": "vul_energy",
     "label": "Energy Vulnerability Index",
     "category": "vulnerability_scores",
+    "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_energy_vul.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_energy_vul.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0.3,
-      0.7,
-      0.7,
-      0.7
+      0.15,
+      0.344,
+      0.746
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null,
-    "subgroup": "energy"
+    "dataQualityNote": null
   },
   {
     "id": "vul_health",
     "label": "Health Vulnerability Index",
     "category": "vulnerability_scores",
+    "subgroup": "healthcare",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_health_vul.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_health_vul.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0.4,
-      0.5,
-      0.5,
-      0.5
+      0.301,
+      0.395,
+      0.545
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null,
-    "subgroup": "healthcare"
+    "dataQualityNote": null
   },
   {
     "id": "vul_road",
     "label": "Roads Vulnerability Index",
     "category": "vulnerability_scores",
+    "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_road_vul.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_road_vul.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0.4,
-      0.5,
-      0.6,
-      0.6
+      0.215,
+      0.383,
+      0.581
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null,
-    "subgroup": "roads"
+    "dataQualityNote": null
   },
   {
     "id": "vul_water",
     "label": "Water Vulnerability Index",
     "category": "vulnerability_scores",
+    "subgroup": "water",
     "pinned": false,
-    "sourceShapefile": "Risk & Vulnerability/Block_Water.shp",
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_Water.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#F0E3DA",
-      "#EDD7C9",
-      "#E6C2AA",
-      "#DE9C77",
-      "#AB6156"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      0.4,
-      0.7,
-      0.7,
-      0.7
+      0.335,
+      0.393,
+      0.706
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null,
-    "subgroup": "water"
+    "dataQualityNote": null
   },
   {
-    "id": "hazard_climate_precip_mean",
-    "label": "Mean Annual Total Precipitation (mm)",
-    "category": "climate",
-    "pinned": false,
-    "sourceShapefile": "Climate/Precipitation/PRCPTOT_mean",
+    "id": "risk_composite",
+    "label": "Overall Risk Score (Composite)",
+    "category": "risk_scores",
+    "subgroup": null,
+    "pinned": true,
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_energy_vul.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#DBEAFE",
-      "#93C5FD",
-      "#3B82F6",
-      "#1D4ED8"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      1923.76103515625,
-      2287.355712890625,
-      2579.3221842447915
+      28,
+      46.4,
+      57
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": true,
+    "description": "Overall Risk Score (Composite) by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_energy_vul.shp.",
+    "dataQualityNote": "Despite being sourced from the 'Block_energy_vul' file (named for energy vulnerability), this field is an overall multi-sector composite risk score, not energy-specific — same kind of source mislabeling as hazard_multi_composite (Irrigation Source Risk Map)."
+  },
+  {
+    "id": "vul_composite",
+    "label": "Overall Vulnerability Index (Composite)",
+    "category": "vulnerability_scores",
+    "subgroup": null,
+    "pinned": true,
+    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_energy_vul.shp",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      0.4304,
+      0.607,
+      0.683
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": true,
+    "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
+    "dataQualityNote": "Sourced from the 'Block_energy_vul' file alongside risk_composite — see that layer's note. This is the overall composite vulnerability index, not energy-specific."
+  },
+  {
+    "id": "hazard_climate_precip_mean",
+    "label": "Mean Annual Total Precipitation (mm) — Historical",
+    "category": "climate",
+    "subgroup": "precipitation",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Annual precipitation/Prcptot_mean_his",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      1037.397810311153,
+      1215.382308959961,
+      1408.8851506159856
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Zonal mean of gridded mean annual total precipitation (PRCPTOT), mm/year, per block.",
-    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
-    "subgroup": "precipitation"
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
   },
   {
-    "id": "hazard_climate_precip_cv",
-    "label": "Precipitation Variability (Coefficient of Variation)",
+    "id": "hazard_climate_precip_mean_ssp126",
+    "label": "Mean Annual Total Precipitation (mm) — SSP1-2.6",
     "category": "climate",
+    "subgroup": "precipitation",
     "pinned": false,
-    "sourceShapefile": "Climate/Precipitation/PRCPTOT_CV",
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Annual precipitation/Prcptot_mean_ssp_126",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#DBEAFE",
-      "#93C5FD",
-      "#3B82F6",
-      "#1D4ED8"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      11.90244156397306,
-      13.911971859486178,
-      16.75531538300595
+      1248.3849243164063,
+      1446.0288314819336,
+      1688.5533071664663
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean annual total precipitation under SSP1-2.6, mm/year, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_precip_mean_ssp245",
+    "label": "Mean Annual Total Precipitation (mm) — SSP2-4.5",
+    "category": "climate",
+    "subgroup": "precipitation",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Annual precipitation/Prcptot_mean_ssp_245",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      1257.593034532335,
+      1467.7758331298828,
+      1704.1596394856772
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean annual total precipitation under SSP2-4.5, mm/year, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_precip_mean_ssp370",
+    "label": "Mean Annual Total Precipitation (mm) — SSP3-7.0",
+    "category": "climate",
+    "subgroup": "precipitation",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Annual precipitation/Prcptot_mean_ssp_370",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      1317.2796549479167,
+      1550.7125610351563,
+      1813.1117694561299
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean annual total precipitation under SSP3-7.0, mm/year, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_precip_mean_ssp585",
+    "label": "Mean Annual Total Precipitation (mm) — SSP5-8.5",
+    "category": "climate",
+    "subgroup": "precipitation",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Annual precipitation/Prcptot_mean_ssp_585",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      1389.9212239583333,
+      1649.227709318462,
+      1914.8152512770432
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean annual total precipitation under SSP5-8.5, mm/year, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_precip_cv",
+    "label": "Precipitation Variability (Coefficient of Variation) — Historical",
+    "category": "climate",
+    "subgroup": "precipitation",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Rainfall variability/Prcptot_CV_ssp_his",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      11.544997998787654,
+      12.118354520053728,
+      12.833715664713006
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Zonal mean of the coefficient of variation of annual total precipitation per block — higher values indicate less predictable rainfall year to year.",
-    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
-    "subgroup": "precipitation"
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
   },
   {
-    "id": "hazard_climate_temp_max_hist",
-    "label": "Historical Mean Maximum Temperature (°C)",
+    "id": "hazard_climate_precip_cv_ssp126",
+    "label": "Precipitation Variability (Coefficient of Variation) — SSP1-2.6",
     "category": "climate",
+    "subgroup": "precipitation",
     "pinned": false,
-    "sourceShapefile": "Climate/Temperature/Tmax_his",
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Rainfall variability/Prcptot_CV_ssp_126",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#FEE2E2",
-      "#FCA5A5",
-      "#EF4444",
-      "#B91C1C"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      3.6349298263850964,
-      9.872161971198189,
-      15.012417078018188
+      11.263237458590803,
+      11.8020712649884,
+      12.388783499511362
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected precipitation coefficient of variation under SSP1-2.6, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_precip_cv_ssp245",
+    "label": "Precipitation Variability (Coefficient of Variation) — SSP2-4.5",
+    "category": "climate",
+    "subgroup": "precipitation",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Rainfall variability/Prcptot_CV_ssp_245",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      12.041800473417554,
+      12.814902480379994,
+      13.425283197413155
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected precipitation coefficient of variation under SSP2-4.5, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_precip_cv_ssp370",
+    "label": "Precipitation Variability (Coefficient of Variation) — SSP3-7.0",
+    "category": "climate",
+    "subgroup": "precipitation",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Rainfall variability/Prcptot_CV_ssp_370",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      14.49560052750694,
+      15.19656330462128,
+      15.909434938978874
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected precipitation coefficient of variation under SSP3-7.0, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_precip_cv_ssp585",
+    "label": "Precipitation Variability (Coefficient of Variation) — SSP5-8.5",
+    "category": "climate",
+    "subgroup": "precipitation",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Precipitation/Rainfall variability/Prcptot_CV_ssp_585",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      18.16541507529476,
+      18.961707933352944,
+      19.761967906825195
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected precipitation coefficient of variation under SSP5-8.5, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_max_hist",
+    "label": "Mean Maximum Temperature (°C) — Historical",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmax/Tmax_his",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      18.201768802774364,
+      22.409809759485793,
+      26.28828726253749
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Zonal mean of historical mean maximum temperature per block.",
-    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
-    "subgroup": "temperature"
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
   },
   {
-    "id": "hazard_climate_temp_min_hist",
-    "label": "Historical Mean Minimum Temperature (°C)",
+    "id": "hazard_climate_temp_max_ssp126",
+    "label": "Mean Maximum Temperature (°C) — SSP1-2.6",
     "category": "climate",
+    "subgroup": "temperature",
     "pinned": false,
-    "sourceShapefile": "Climate/Temperature/Tmin_his",
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmax/Tmax_ssp_126",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#FEE2E2",
-      "#FCA5A5",
-      "#EF4444",
-      "#B91C1C"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
-      -6.182250213623047,
-      -1.518344231446584,
-      2.8109784381730214
+      19.571103281481513,
+      23.62754664504737,
+      27.38773005577311
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean maximum temperature under SSP1-2.6, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_max_ssp245",
+    "label": "Mean Maximum Temperature (°C) — SSP2-4.5",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmax/Tmax_ssp_245",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      19.30946419812456,
+      23.428309475503315,
+      27.70988811907908
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean maximum temperature under SSP2-4.5, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_max_ssp370",
+    "label": "Mean Maximum Temperature (°C) — SSP3-7.0",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmax/Tmax_ssp_370",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      19.70719139938113,
+      23.715750810576647,
+      27.944525790513808
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean maximum temperature under SSP3-7.0, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_max_ssp585",
+    "label": "Mean Maximum Temperature (°C) — SSP5-8.5",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmax/Tmax_ssp_585",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      20.107735762867748,
+      24.121171567498184,
+      28.406133496112904
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean maximum temperature under SSP5-8.5, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_min_hist",
+    "label": "Mean Minimum Temperature (°C) — Historical",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmin/Tmin_ssp_his",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      3.752112410461852,
+      10.46903128180999,
+      14.312469861618489
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Zonal mean of historical mean minimum temperature per block.",
-    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
-    "subgroup": "temperature"
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_min_ssp126",
+    "label": "Mean Minimum Temperature (°C) — SSP1-2.6",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmin/Tmin_ssp_126",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.0984184599309055,
+      12.107948676058294,
+      15.724868669024268
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean minimum temperature under SSP1-2.6, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_min_ssp245",
+    "label": "Mean Minimum Temperature (°C) — SSP2-4.5",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmin/Tmin_ssp_245",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      6.77795428512273,
+      12.642972934393235,
+      16.16856514392215
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean minimum temperature under SSP2-4.5, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_min_ssp370",
+    "label": "Mean Minimum Temperature (°C) — SSP3-7.0",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmin/Tmin_ssp_370",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      7.434829806545634,
+      13.186753739251031,
+      16.624224265667166
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean minimum temperature under SSP3-7.0, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_min_ssp585",
+    "label": "Mean Minimum Temperature (°C) — SSP5-8.5",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmin/Tmin_ssp_585",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      7.907561351340494,
+      13.587545724562657,
+      17.037257077190027
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean minimum temperature under SSP5-8.5, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_mean_hist",
+    "label": "Mean Temperature (°C) — Historical",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmean/Tmean_his",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      11.165374624753435,
+      16.06932371987237,
+      19.97315387545324
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of historical mean temperature per block. Source raster is the average of the historical Tmin/Tmax grids.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_mean_ssp126",
+    "label": "Mean Temperature (°C) — SSP1-2.6",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmean/Tmean_ssp_126",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      11.613906878306542,
+      17.260816333421772,
+      21.31410020232577
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean temperature under SSP1-2.6, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_mean_ssp245",
+    "label": "Mean Temperature (°C) — SSP2-4.5",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmean/Tmean_ssp_245",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      12.212515706191828,
+      17.75167776583121,
+      21.6982376327274
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean temperature under SSP2-4.5, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_mean_ssp370",
+    "label": "Mean Temperature (°C) — SSP3-7.0",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmean/Tmean_ssp_370",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      12.762608219959118,
+      18.174763369635453,
+      22.044938559787884
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean temperature under SSP3-7.0, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
+  },
+  {
+    "id": "hazard_climate_temp_mean_ssp585",
+    "label": "Mean Temperature (°C) — SSP5-8.5",
+    "category": "climate",
+    "subgroup": "temperature",
+    "pinned": false,
+    "sourceShapefile": "Climate data for portal/Climate data for portal/Temperature/Tmean/Tmean_ssp_585",
+    "geometrySource": "blocks",
+    "unit": "score",
+    "renderType": "choropleth",
+    "colorRamp": [
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
+    ],
+    "breaks": [
+      13.204912627479176,
+      18.599020810533396,
+      22.475160770235753
+    ],
+    "classification": "quantile",
+    "defaultOpacity": 0.75,
+    "defaultVisible": false,
+    "description": "Zonal mean of projected mean temperature under SSP5-8.5, per block.",
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
   },
   {
     "id": "hazard_extreme_rainfall_r90p",
     "label": "Extreme Rainfall Total Above 90th Percentile (R90p, mm)",
     "category": "hazards",
+    "subgroup": "extreme_rainfall",
     "pinned": false,
-    "sourceShapefile": "Climate/Extreme Rainfall/R90p",
+    "sourceShapefile": "Portal data_1/Portal data_1/Hazards/Extreme Rainfall/R90p",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#DBEAFE",
-      "#93C5FD",
-      "#3B82F6",
-      "#1D4ED8"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
       776.388279183201,
@@ -1687,23 +2331,23 @@
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Zonal mean of total precipitation from days exceeding the local 90th-percentile daily rainfall, mm, per block.",
-    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
-    "subgroup": "extreme_rainfall"
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
   },
   {
     "id": "hazard_extreme_rainfall_rx5d",
-    "label": "Maximum 5-Day Rainfall Total (RX5d, mm)",
+    "label": "Maximum 5-Day Rainfall Total (RX5day, mm)",
     "category": "hazards",
+    "subgroup": "extreme_rainfall",
     "pinned": false,
-    "sourceShapefile": "Climate/Extreme Rainfall/RX5d",
+    "sourceShapefile": "Portal data_1/Portal data_1/Hazards/Extreme Rainfall/RX5d",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#DBEAFE",
-      "#93C5FD",
-      "#3B82F6",
-      "#1D4ED8"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
       194.20530208677016,
@@ -1714,23 +2358,23 @@
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Zonal mean of the annual maximum consecutive 5-day precipitation total, mm, per block.",
-    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
-    "subgroup": "extreme_rainfall"
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
   },
   {
     "id": "hazard_extreme_temp_tn90p",
     "label": "Warm Nights Frequency (TN90p)",
     "category": "hazards",
+    "subgroup": "extreme_temperature",
     "pinned": false,
-    "sourceShapefile": "Climate/Extreme Temperature/TN90p",
+    "sourceShapefile": "Portal data_1/Portal data_1/Hazards/Extreme temperature/TN90p",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#FEE2E2",
-      "#FCA5A5",
-      "#EF4444",
-      "#B91C1C"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
       10.019697063485372,
@@ -1741,23 +2385,23 @@
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Zonal mean of the percentage of days with minimum temperature above the local 90th percentile, per block.",
-    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
-    "subgroup": "extreme_temperature"
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
   },
   {
     "id": "hazard_extreme_temp_tx90p",
     "label": "Warm Days Frequency (TX90p)",
     "category": "hazards",
+    "subgroup": "extreme_temperature",
     "pinned": false,
-    "sourceShapefile": "Climate/Extreme Temperature/TX90p",
+    "sourceShapefile": "Portal data_1/Portal data_1/Hazards/Extreme temperature/TX90p",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#FEE2E2",
-      "#FCA5A5",
-      "#EF4444",
-      "#B91C1C"
+      "#2E7D32",
+      "#FBC02D",
+      "#F57C00",
+      "#D32F2F"
     ],
     "breaks": [
       10.19316488581154,
@@ -1768,13 +2412,13 @@
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "Zonal mean of the percentage of days with maximum temperature above the local 90th percentile, per block.",
-    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry.",
-    "subgroup": "extreme_temperature"
+    "dataQualityNote": "Derived from a gridded raster (GeoTIFF), not a block-level vector file — value is the zonal mean of raster pixels whose center falls within the block polygon. A small number of blocks may fall back to the nearest valid pixel to the block centroid where the source grid is coarser than the block geometry."
   },
   {
     "id": "hazard_extent_drought",
     "label": "Drought Zone (extent)",
     "category": "hazards",
+    "subgroup": null,
     "pinned": false,
     "sourceShapefile": "Hazards/drought.shp",
     "geometrySource": "standalone",
@@ -1789,13 +2433,13 @@
     "defaultOpacity": 0.35,
     "defaultVisible": false,
     "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
-    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
-    "subgroup": "drought"
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth."
   },
   {
     "id": "hazard_extent_extreme_rainfall",
     "label": "Extreme Rainfall Zone (extent)",
     "category": "hazards",
+    "subgroup": null,
     "pinned": false,
     "sourceShapefile": "Hazards/extreme-rainfall.shp",
     "geometrySource": "standalone",
@@ -1810,13 +2454,13 @@
     "defaultOpacity": 0.35,
     "defaultVisible": false,
     "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
-    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
-    "subgroup": "extreme_rainfall"
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth."
   },
   {
     "id": "hazard_extent_forest_fire",
     "label": "Forest Fire Zone (extent)",
     "category": "hazards",
+    "subgroup": null,
     "pinned": false,
     "sourceShapefile": "Hazards/Forest Fire Risk.shp",
     "geometrySource": "standalone",
@@ -1831,13 +2475,13 @@
     "defaultOpacity": 0.35,
     "defaultVisible": false,
     "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
-    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
-    "subgroup": "forest_fire"
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth."
   },
   {
     "id": "hazard_extent_heatwave",
     "label": "Heatwave Zone (extent)",
     "category": "hazards",
+    "subgroup": null,
     "pinned": false,
     "sourceShapefile": "Hazards/heatwave-susceptibility.shp",
     "geometrySource": "standalone",
@@ -1852,13 +2496,13 @@
     "defaultOpacity": 0.35,
     "defaultVisible": false,
     "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
-    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
-    "subgroup": "extreme_temperature"
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth."
   },
   {
     "id": "hazard_extent_landslide",
     "label": "Landslide Zone (extent)",
     "category": "hazards",
+    "subgroup": null,
     "pinned": false,
     "sourceShapefile": "Hazards/landslide.shp",
     "geometrySource": "standalone",
@@ -1873,15 +2517,15 @@
     "defaultOpacity": 0.35,
     "defaultVisible": false,
     "description": "Raw hazard-extent mask (secondary overlay) — the graded Block Wise version of this hazard is the primary layer; this shows the underlying zone footprint.",
-    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth.",
-    "subgroup": "landslide"
+    "dataQualityNote": "Source shapefile is a raster-derived extent mask, not block-level graded data (single or near-single class). Shown as a flat zone outline, not a classed choropleth."
   },
   {
     "id": "infra_asset_forest_patches",
     "label": "Forest Patches",
     "category": "infrastructure",
+    "subgroup": null,
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Forest.shp",
+    "sourceShapefile": "Asset layers/Asset layers/Forest.shp",
     "geometrySource": "standalone",
     "geometryFile": "infrastructure-assets/forest-patches.geojson",
     "unit": "none",
@@ -1894,15 +2538,15 @@
     "defaultOpacity": 0.5,
     "defaultVisible": false,
     "description": "Raw forest patches geometry, not a graded indicator — shown as literal locations/lines/patches.",
-    "dataQualityNote": null,
-    "subgroup": null
+    "dataQualityNote": null
   },
   {
     "id": "infra_asset_power_stations",
     "label": "Power Stations",
     "category": "infrastructure",
+    "subgroup": null,
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Power Stations.shp",
+    "sourceShapefile": "Asset layers/Asset layers/Power Plants.shp",
     "geometrySource": "standalone",
     "geometryFile": "infrastructure-assets/power-stations.geojson",
     "unit": "none",
@@ -1915,15 +2559,15 @@
     "defaultOpacity": 0.85,
     "defaultVisible": false,
     "description": "Raw power stations geometry, not a graded indicator — shown as literal locations/lines/patches.",
-    "dataQualityNote": null,
-    "subgroup": null
+    "dataQualityNote": "New source file ('Power Plants.shp') has a completely different, much thinner schema than the old 'Power Stations.shp' — no bpcode/capacity/discom fields, just an 'NAMES' status code (e.g. HEP-P = proposed, HEP-UC = under construction)."
   },
   {
     "id": "infra_asset_roads",
     "label": "Road Network",
     "category": "infrastructure",
+    "subgroup": null,
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Roads.shp",
+    "sourceShapefile": "Asset layers/Asset layers/Roads.shp",
     "geometrySource": "standalone",
     "geometryFile": "infrastructure-assets/roads.geojson",
     "unit": "none",
@@ -1936,15 +2580,15 @@
     "defaultOpacity": 0.85,
     "defaultVisible": false,
     "description": "Raw road network geometry, not a graded indicator — shown as literal locations/lines/patches.",
-    "dataQualityNote": null,
-    "subgroup": null
+    "dataQualityNote": null
   },
   {
     "id": "infra_asset_soil_health_points",
     "label": "Soil Health Survey Points",
     "category": "infrastructure",
+    "subgroup": null,
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Soil Health Data points.shp",
+    "sourceShapefile": "Asset layers/Asset layers/Soil Health Data points.shp",
     "geometrySource": "standalone",
     "geometryFile": "infrastructure-assets/soil-health-points.geojson",
     "unit": "none",
@@ -1957,15 +2601,15 @@
     "defaultOpacity": 0.85,
     "defaultVisible": false,
     "description": "Raw soil health survey points geometry, not a graded indicator — shown as literal locations/lines/patches.",
-    "dataQualityNote": null,
-    "subgroup": null
+    "dataQualityNote": "Field list updated for the new source's schema (71 fields total) — P/K/pH values are stored as text, not numeric, in this delivery."
   },
   {
     "id": "infra_asset_spring_locations",
     "label": "Spring Locations",
     "category": "infrastructure",
+    "subgroup": null,
     "pinned": false,
-    "sourceShapefile": "Infrastructure & Assets/Spring locations.shp",
+    "sourceShapefile": "Asset layers/Asset layers/Spring locations.shp",
     "geometrySource": "standalone",
     "geometryFile": "infrastructure-assets/spring-locations.geojson",
     "unit": "none",
@@ -1978,13 +2622,13 @@
     "defaultOpacity": 0.85,
     "defaultVisible": false,
     "description": "Raw spring locations geometry, not a graded indicator — shown as literal locations/lines/patches.",
-    "dataQualityNote": null,
-    "subgroup": null
+    "dataQualityNote": null
   },
   {
     "id": "infra_asset_transmission_distribution_lines",
     "label": "Transmission & Distribution Lines",
     "category": "infrastructure",
+    "subgroup": null,
     "pinned": false,
     "sourceShapefile": "Infrastructure & Assets/Transmission and Distribution Lines.shp",
     "geometrySource": "standalone",
@@ -1999,7 +2643,6 @@
     "defaultOpacity": 0.85,
     "defaultVisible": false,
     "description": "Raw transmission & distribution lines geometry, not a graded indicator — shown as literal locations/lines/patches.",
-    "dataQualityNote": null,
-    "subgroup": null
+    "dataQualityNote": "No line-geometry transmission network exists in the new Asset layers drop — it only provides point assets instead (Distribution Transformers, Power Transformer, Sub Stations, Transmission Tower shapefiles, not yet onboarded). Stays on the original GIS Database source."
   }
 ]
