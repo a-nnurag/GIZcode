@@ -5,11 +5,12 @@ import { AboutMenu } from './AboutMenu';
 import { CategoryNavBar } from '../CategoryNav/CategoryNavBar';
 
 const SYMBOLS = [
-  { src: withBase('/symbols/image007.jpg'), alt: 'German Cooperation / GIZ', className: 'h-16 w-auto' },
+  { src: withBase('/symbols/german-cooperation.png'), alt: 'German Cooperation', className: 'h-16 w-auto' },
+  { src: withBase('/symbols/giz-logo.png'), alt: 'GIZ', className: 'h-16 w-auto' },
   { src: withBase('/symbols/image008.png'), alt: 'Government of Uttarakhand', className: 'h-12 w-auto' },
-  { src: withBase('/symbols/image009.png'), alt: 'STS', className: 'h-12 w-auto' },
   { src: withBase('/symbols/image010.jpg'), alt: 'ICARS', className: 'h-12 w-auto' },
   { src: withBase('/symbols/image011.png'), alt: 'Institute of Technology Roorkee', className: 'h-12 w-auto' },
+  { src: withBase('/symbols/image009.png'), alt: 'STS', className: 'h-10 w-auto' },
 ];
 
 export function Header() {
