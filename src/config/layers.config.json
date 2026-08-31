@@ -1313,7 +1313,7 @@
     "category": "risk_scores",
     "subgroup": "agriculture",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_agri_risk.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_agriculture_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1324,15 +1324,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      37.9,
-      48.2,
-      54.7
+      41.0306476782,
+      59.1751513322,
+      77.69601266869999
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Agriculture Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_agri_risk.shp.",
-    "dataQualityNote": null
+    "description": "Agriculture Risk Score by block, sourced from Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_agriculture_risk.shp.",
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_RISK field per category file, 0-1 scale, scaled x100 here for consistency with the existing 0-100 risk-score convention). risk_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Composite_ field) pending a proper composite replacement."
   },
   {
     "id": "risk_energy",
@@ -1340,7 +1340,7 @@
     "category": "risk_scores",
     "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_energy_Risk.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_energy_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1351,15 +1351,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      27.8,
-      43.3,
-      62.1
+      28.4197120862,
+      47.5212684484,
+      68.942276907
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Energy Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_energy_Risk.shp.",
-    "dataQualityNote": null
+    "description": "Energy Risk Score by block, sourced from Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_energy_risk.shp.",
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_RISK field per category file, 0-1 scale, scaled x100 here for consistency with the existing 0-100 risk-score convention). risk_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Composite_ field) pending a proper composite replacement."
   },
   {
     "id": "risk_health",
@@ -1367,7 +1367,7 @@
     "category": "risk_scores",
     "subgroup": "healthcare",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_health_risk.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_health_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1378,15 +1378,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      39.2,
-      47.5,
-      55.5
+      21.8941382991,
+      42.0785473134,
+      63.664576200599996
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Health Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_health_risk.shp.",
-    "dataQualityNote": null
+    "description": "Health Risk Score by block, sourced from Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_health_risk.shp.",
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_RISK field per category file, 0-1 scale, scaled x100 here for consistency with the existing 0-100 risk-score convention). risk_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Composite_ field) pending a proper composite replacement."
   },
   {
     "id": "risk_road",
@@ -1394,7 +1394,7 @@
     "category": "risk_scores",
     "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_road_risk.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_road_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1405,15 +1405,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      22.6,
-      47.3,
-      57.5
+      27.3697267816,
+      50.879877903600004,
+      70.8791236669
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Roads Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_road_risk.shp.",
-    "dataQualityNote": null
+    "description": "Roads Risk Score by block, sourced from Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_road_risk.shp.",
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_RISK field per category file, 0-1 scale, scaled x100 here for consistency with the existing 0-100 risk-score convention). risk_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Composite_ field) pending a proper composite replacement."
   },
   {
     "id": "risk_water",
@@ -1421,7 +1421,7 @@
     "category": "risk_scores",
     "subgroup": "water",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_water_risk.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_water_risk.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1432,15 +1432,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      37.6,
-      53.2,
-      66.7
+      28.527168571,
+      44.2716958674,
+      63.79579451589999
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
-    "description": "Water Risk Score by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Risk shapefiles/Block_water_risk.shp.",
-    "dataQualityNote": null
+    "description": "Water Risk Score by block, sourced from Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Risk/Block_water_risk.shp.",
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_RISK field per category file, 0-1 scale, scaled x100 here for consistency with the existing 0-100 risk-score convention). risk_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Composite_ field) pending a proper composite replacement."
   },
   {
     "id": "vul_agriculture",
@@ -1448,7 +1448,7 @@
     "category": "vulnerability_scores",
     "subgroup": "agriculture",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_agri_vul.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Vulnerability/Block_agriculture_vulnerability.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1459,15 +1459,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      0.237,
-      0.505,
-      0.689
+      0.22903292985,
+      0.53317574553,
+      0.74923038251
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_VULNERAB field per category file, already 0-1 scale). vul_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Comp_Vul field) pending a proper composite replacement."
   },
   {
     "id": "vul_energy",
@@ -1475,7 +1475,7 @@
     "category": "vulnerability_scores",
     "subgroup": "energy",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_energy_vul.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Vulnerability/Block_energy_vulnerability.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1486,15 +1486,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      0.15,
-      0.344,
-      0.746
+      0.263353305511,
+      0.495770170683,
+      0.695587621002
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_VULNERAB field per category file, already 0-1 scale). vul_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Comp_Vul field) pending a proper composite replacement."
   },
   {
     "id": "vul_health",
@@ -1502,7 +1502,7 @@
     "category": "vulnerability_scores",
     "subgroup": "healthcare",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_health_vul.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Vulnerability/Block_health_vulnerability.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1513,15 +1513,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      0.301,
-      0.395,
-      0.545
+      0.287610406965,
+      0.469335489875,
+      0.65717375533
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_VULNERAB field per category file, already 0-1 scale). vul_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Comp_Vul field) pending a proper composite replacement."
   },
   {
     "id": "vul_road",
@@ -1529,7 +1529,7 @@
     "category": "vulnerability_scores",
     "subgroup": "roads",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_road_vul.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Vulnerability/Block_road_vulnerability.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1540,15 +1540,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      0.215,
-      0.383,
-      0.581
+      0.24818605029,
+      0.509766976788,
+      0.733107020681
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_VULNERAB field per category file, already 0-1 scale). vul_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Comp_Vul field) pending a proper composite replacement."
   },
   {
     "id": "vul_water",
@@ -1556,7 +1556,7 @@
     "category": "vulnerability_scores",
     "subgroup": "water",
     "pinned": false,
-    "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_Water.shp",
+    "sourceShapefile": "Vulnerability and risk shapefiles/Vulnerability and risk shapefiles/Vulnerability/Block_water_vulnerability.shp",
     "geometrySource": "blocks",
     "unit": "score",
     "renderType": "choropleth",
@@ -1567,15 +1567,15 @@
       "#D32F2F"
     ],
     "breaks": [
-      0.335,
-      0.393,
-      0.706
+      0.305104842178,
+      0.510328539418,
+      0.727564131195
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
     "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
-    "dataQualityNote": null
+    "dataQualityNote": "Refreshed 2026-08-31 from a new delivery (single generic N_VULNERAB field per category file, already 0-1 scale). vul_composite still comes from the older 'Risk and vul scores_ V1' delivery (Block_energy_vul.shp's Comp_Vul field) pending a proper composite replacement."
   },
   {
     "id": "risk_composite",
