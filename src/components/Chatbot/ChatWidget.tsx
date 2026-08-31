@@ -81,8 +81,8 @@ export function ChatWidget() {
             key={i}
             className={
               m.role === 'user'
-                ? 'ml-auto max-w-[85%] rounded-lg bg-slate-800 px-3 py-1.5 text-sm text-white'
-                : 'mr-auto max-w-[85%] rounded-lg bg-slate-100 px-3 py-1.5 text-sm text-slate-800'
+                ? 'ml-auto max-w-[85%] whitespace-pre-wrap rounded-lg bg-slate-800 px-3 py-1.5 text-sm text-white'
+                : 'mr-auto max-w-[85%] whitespace-pre-wrap rounded-lg bg-slate-100 px-3 py-1.5 text-sm text-slate-800'
             }
           >
             {m.content}

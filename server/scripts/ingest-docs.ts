@@ -5,16 +5,23 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import mammoth from 'mammoth';
+import pdfParse from 'pdf-parse';
 import { config } from '../src/config';
 import { upsertVectors } from '../src/lib/vectorStore';
 
 const CHUNK_SIZE = 800;
 const CHUNK_OVERLAP = 100;
+const UPSERT_BATCH_SIZE = 50;
 
 async function extractText(filePath: string): Promise<string> {
-  if (path.extname(filePath).toLowerCase() === '.docx') {
+  const ext = path.extname(filePath).toLowerCase();
+  if (ext === '.docx') {
     const result = await mammoth.extractRawText({ path: filePath });
     return result.value;
+  }
+  if (ext === '.pdf') {
+    const data = await pdfParse(fs.readFileSync(filePath));
+    return data.text;
   }
   return fs.readFileSync(filePath, 'utf8');
 }
@@ -64,7 +71,7 @@ async function main() {
     console.log(`No knowledge directory found at ${config.knowledgeDir}`);
     return;
   }
-  const files = fs.readdirSync(config.knowledgeDir).filter((f) => /\.(docx|txt|md)$/i.test(f));
+  const files = fs.readdirSync(config.knowledgeDir).filter((f) => /\.(docx|pdf|txt|md)$/i.test(f));
   if (files.length === 0) {
     console.log(`No documents found in ${config.knowledgeDir}`);
     return;
@@ -80,7 +87,10 @@ async function main() {
       data: chunk,
       metadata: { text: chunk, source: file },
     }));
-    await upsertVectors(items);
+
+    for (let i = 0; i < items.length; i += UPSERT_BATCH_SIZE) {
+      await upsertVectors(items.slice(i, i + UPSERT_BATCH_SIZE));
+    }
     console.log(`Ingested ${chunks.length} chunk(s) from ${file}`);
   }
 }
