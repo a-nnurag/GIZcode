@@ -13,3 +13,11 @@ services:
         value: https://a-nnurag.github.io,http://localhost:5173
       - key: PORT
         value: 8787
+      - key: GROQ_API_KEY
+        sync: false
+      - key: CHAT_MODEL
+        value: openai/gpt-oss-120b
+      - key: UPSTASH_VECTOR_REST_URL
+        sync: false
+      - key: UPSTASH_VECTOR_REST_TOKEN
+        sync: false

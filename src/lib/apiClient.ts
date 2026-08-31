@@ -63,3 +63,21 @@ export async function apiFetch(path: string): Promise<Response> {
     cache: 'no-store',
   });
 }
+
+// Same auth-header + 401-retry-once behavior as apiFetch, for POSTing a JSON body (e.g. the
+// chatbot). No other caller needs this yet — apiFetch stays GET-only.
+export async function apiPost(path: string, body: unknown): Promise<Response> {
+  const post = async (token: string) =>
+    fetch(`${API_BASE}${path}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
+      body: JSON.stringify(body),
+      cache: 'no-store',
+    });
+
+  const res = await post(await getToken());
+  if (res.status !== 401) return res;
+
+  sessionPromise = mintSession();
+  return post(await getToken());
+}

@@ -5,13 +5,15 @@
   "scripts": {
     "dev": "tsx watch src/index.ts",
     "build": "tsc -p tsconfig.json",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "ingest": "tsx scripts/ingest-docs.ts"
   },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "express-rate-limit": "^7.4.0"
+    "express-rate-limit": "^7.4.0",
+    "mammoth": "^1.8.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",

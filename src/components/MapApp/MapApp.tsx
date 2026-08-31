@@ -5,6 +5,7 @@ import { Legend } from '../Legend/Legend';
 import { BlockDetailPanel } from '../BlockDetailPanel/BlockDetailPanel';
 import { CompareView } from '../CompareView/CompareView';
 import { QuickTourCarousel } from '../QuickTour/QuickTourCarousel';
+import { ChatWidget } from '../Chatbot/ChatWidget';
 
 export function MapApp() {
   const compareActive = useMapStore((s) => s.compareMode.active);
@@ -24,6 +25,9 @@ export function MapApp() {
                   <Legend />
                 </div>
                 <BlockDetailPanel />
+              </div>
+              <div className="absolute bottom-4 left-4 z-10">
+                <ChatWidget />
               </div>
             </div>
           </>

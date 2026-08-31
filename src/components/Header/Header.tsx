@@ -5,11 +5,11 @@ import { AboutMenu } from './AboutMenu';
 import { CategoryNavBar } from '../CategoryNav/CategoryNavBar';
 
 const SYMBOLS = [
-  { src: withBase('/symbols/image008.png'), alt: 'Government of Uttarakhand' },
-  { src: withBase('/symbols/image009.png'), alt: 'STS' },
-  { src: withBase('/symbols/image010.jpg'), alt: 'ICARS' },
-  { src: withBase('/symbols/image011.png'), alt: 'Institute of Technology Roorkee' },
-  { src: withBase('/symbols/image007.jpg'), alt: 'German Cooperation / GIZ' },
+  { src: withBase('/symbols/image007.jpg'), alt: 'German Cooperation / GIZ', className: 'h-16 w-auto' },
+  { src: withBase('/symbols/image008.png'), alt: 'Government of Uttarakhand', className: 'h-12 w-auto' },
+  { src: withBase('/symbols/image009.png'), alt: 'STS', className: 'h-12 w-auto' },
+  { src: withBase('/symbols/image010.jpg'), alt: 'ICARS', className: 'h-12 w-auto' },
+  { src: withBase('/symbols/image011.png'), alt: 'Institute of Technology Roorkee', className: 'h-12 w-auto' },
 ];
 
 export function Header() {
@@ -19,12 +19,14 @@ export function Header() {
   return (
     <header className="flex shrink-0 flex-col border-b border-slate-200 bg-white shadow-sm">
       <div className="flex h-16 items-center justify-between gap-3 px-4">
-        <h1 className="truncate text-base font-semibold text-[var(--color-primary)]">{wordmark}</h1>
         <div className="flex shrink-0 items-center gap-3">
           {SYMBOLS.map((symbol) => (
-            <img key={symbol.src} src={symbol.src} alt={symbol.alt} className="h-12 w-auto" />
+            <img key={symbol.src} src={symbol.src} alt={symbol.alt} className={symbol.className} />
           ))}
         </div>
+        <h1 className="truncate text-right text-base font-semibold text-[var(--color-primary)]">
+          {wordmark}
+        </h1>
       </div>
       <div className="flex h-12 items-center justify-between gap-2 border-t border-slate-100 px-4">
         <div className="flex min-w-0 items-center gap-1 overflow-x-auto">
