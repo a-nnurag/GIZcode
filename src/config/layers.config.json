@@ -4,7 +4,7 @@
     "label": "Multi-Hazard Risk Score (Composite)",
     "category": "hazards",
     "subgroup": null,
-    "pinned": true,
+    "pinned": false,
     "sourceShapefile": "Hazards/Block Wise Irrigation Source Risk Map.shp",
     "geometrySource": "blocks",
     "unit": "score",
@@ -22,7 +22,7 @@
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
-    "defaultVisible": true,
+    "defaultVisible": false,
     "description": "Multi-Hazard Risk Score (Composite) by block, sourced from Hazards/Block Wise Irrigation Source Risk Map.shp.",
     "dataQualityNote": "No equivalent multi-hazard composite shapefile exists in Portal data_1/Hazards (only 4 individual risk-type files) — stays on the original GIS Database source until a replacement is provided. Source file is named 'Block Wise Irrigation Source Risk Map.shp' but contains no irrigation-specific data; see blocks.geojson's own sourcing note in 02-extract-blocks.mjs for why this file's attributes (but not its geometry) are trusted."
   },
@@ -64,10 +64,10 @@
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       6.66666666667,
@@ -91,10 +91,10 @@
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       5.05050505051,
@@ -145,10 +145,10 @@
     "unit": "%",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       16.577540107,
@@ -1582,7 +1582,7 @@
     "label": "Overall Risk Score (Composite)",
     "category": "risk_scores",
     "subgroup": null,
-    "pinned": true,
+    "pinned": false,
     "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_energy_vul.shp",
     "geometrySource": "blocks",
     "unit": "score",
@@ -1600,7 +1600,7 @@
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
-    "defaultVisible": true,
+    "defaultVisible": false,
     "description": "Overall Risk Score (Composite) by block, sourced from Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_energy_vul.shp.",
     "dataQualityNote": "Despite being sourced from the 'Block_energy_vul' file (named for energy vulnerability), this field is an overall multi-sector composite risk score, not energy-specific — same kind of source mislabeling as hazard_multi_composite (Irrigation Source Risk Map)."
   },
@@ -1609,7 +1609,7 @@
     "label": "Overall Vulnerability Index (Composite)",
     "category": "vulnerability_scores",
     "subgroup": null,
-    "pinned": true,
+    "pinned": false,
     "sourceShapefile": "Portal data_1/Portal data_1/Risk and vul scores_ V1/Vulnerability shapefiles/Block_energy_vul.shp",
     "geometrySource": "blocks",
     "unit": "score",
@@ -1627,7 +1627,7 @@
     ],
     "classification": "quantile",
     "defaultOpacity": 0.75,
-    "defaultVisible": true,
+    "defaultVisible": false,
     "description": "0-1 vulnerability index (not on the same 0-100 scale as the Risk Score layers).",
     "dataQualityNote": "Sourced from the 'Block_energy_vul' file alongside risk_composite — see that layer's note. This is the overall composite vulnerability index, not energy-specific."
   },
@@ -1642,10 +1642,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       1037.397810311153,
@@ -1669,10 +1669,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       1248.3849243164063,
@@ -1696,10 +1696,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       1257.593034532335,
@@ -1723,10 +1723,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       1317.2796549479167,
@@ -1750,10 +1750,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       1389.9212239583333,
@@ -1777,10 +1777,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       11.544997998787654,
@@ -1804,10 +1804,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       11.263237458590803,
@@ -1831,10 +1831,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       12.041800473417554,
@@ -1858,10 +1858,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       14.49560052750694,
@@ -1885,10 +1885,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       18.16541507529476,
@@ -1912,10 +1912,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       18.201768802774364,
@@ -1939,10 +1939,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       19.571103281481513,
@@ -1966,10 +1966,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       19.30946419812456,
@@ -1993,10 +1993,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       19.70719139938113,
@@ -2020,10 +2020,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       20.107735762867748,
@@ -2047,10 +2047,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       3.752112410461852,
@@ -2074,10 +2074,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       6.0984184599309055,
@@ -2101,10 +2101,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       6.77795428512273,
@@ -2128,10 +2128,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       7.434829806545634,
@@ -2155,10 +2155,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       7.907561351340494,
@@ -2182,10 +2182,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       11.165374624753435,
@@ -2209,10 +2209,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       11.613906878306542,
@@ -2236,10 +2236,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       12.212515706191828,
@@ -2263,10 +2263,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       12.762608219959118,
@@ -2290,10 +2290,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       13.204912627479176,
@@ -2317,10 +2317,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       776.388279183201,
@@ -2344,10 +2344,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#DBEAFE",
+      "#60A5FA",
+      "#2563EB",
+      "#1E3A8A"
     ],
     "breaks": [
       194.20530208677016,
@@ -2371,10 +2371,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       10.019697063485372,
@@ -2398,10 +2398,10 @@
     "unit": "score",
     "renderType": "choropleth",
     "colorRamp": [
-      "#2E7D32",
-      "#FBC02D",
-      "#F57C00",
-      "#D32F2F"
+      "#FEE2E2",
+      "#FCA5A5",
+      "#EF4444",
+      "#991B1B"
     ],
     "breaks": [
       10.19316488581154,
@@ -2643,6 +2643,258 @@
     "defaultOpacity": 0.85,
     "defaultVisible": false,
     "description": "Raw transmission & distribution lines geometry, not a graded indicator — shown as literal locations/lines/patches.",
-    "dataQualityNote": "No line-geometry transmission network exists in the new Asset layers drop — it only provides point assets instead (Distribution Transformers, Power Transformer, Sub Stations, Transmission Tower shapefiles, not yet onboarded). Stays on the original GIS Database source."
+    "dataQualityNote": "The new Asset layers drop's electrical-network shapefiles (Distribution Transformers, Power Transformer, Sub Stations, Transmission Tower) are point locations, not line-path geometry — they're onboarded as their own separate layers below rather than replacing this one."
+  },
+  {
+    "id": "infra_asset_agriculture",
+    "label": "Agriculture Land",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Agriculture.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/agriculture.geojson",
+    "unit": "none",
+    "renderType": "raw-polygons",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.5,
+    "defaultVisible": false,
+    "description": "Raw agriculture land geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": "High vertex-density parcel geometry (statewide farmland mapping) — raster-rendering it unsimplified made a single choropleth take 10+ minutes per zoom level, so this uses the same aggressive 3% simplification as roads."
+  },
+  {
+    "id": "infra_asset_protected_areas",
+    "label": "Protected Areas",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Protected Areas.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/protected-areas.geojson",
+    "unit": "none",
+    "renderType": "raw-polygons",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.5,
+    "defaultVisible": false,
+    "description": "Raw protected areas geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_basins",
+    "label": "River Basins",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Uttarakhand Basins.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/basins.geojson",
+    "unit": "none",
+    "renderType": "raw-polygons",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.5,
+    "defaultVisible": false,
+    "description": "Raw river basins geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_wildlife_corridors",
+    "label": "Wildlife Corridors",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Wildlife Corridors.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/wildlife-corridors.geojson",
+    "unit": "none",
+    "renderType": "raw-polygons",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.5,
+    "defaultVisible": false,
+    "description": "Raw wildlife corridors geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": "Raw KML-import corridor geometry (FolderPath/SymbolID/AltMode fields are Google Earth artifacts, dropped here) — no bpcode field, so this is shown as its own asset layer rather than joined to blocks. See forest_wildlife_corridor_risk in field-map.json for the block-joined indicator version, which still needs a spatial-join step against this geometry."
+  },
+  {
+    "id": "infra_asset_elephant_corridor",
+    "label": "Elephant Corridor",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Elephant Corridor.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/elephant-corridor.geojson",
+    "unit": "none",
+    "renderType": "raw-lines",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw elephant corridor geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_drainage",
+    "label": "Drainage Network",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Uttarakhand Drainage.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/drainage.geojson",
+    "unit": "none",
+    "renderType": "raw-lines",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw drainage network geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_schools",
+    "label": "Schools",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Bharatmaps_Schools.76-9395--28-6030--84-3992--31-6246.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/schools.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw schools geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_irrigation_sources",
+    "label": "Irrigation Sources",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Irrigation Sources.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/irrigation-sources.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw irrigation sources geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_distribution_transformers",
+    "label": "Distribution Transformers",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Distribution Transformers.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/distribution-transformers.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw distribution transformers geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_power_transformers",
+    "label": "Power Transformers",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Power Transformer.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/power-transformers.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw power transformers geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_sub_stations",
+    "label": "Sub Stations",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Sub Stations.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/sub-stations.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw sub stations geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
+  },
+  {
+    "id": "infra_asset_transmission_towers",
+    "label": "Transmission Towers",
+    "category": "infrastructure",
+    "subgroup": null,
+    "pinned": false,
+    "sourceShapefile": "Asset layers/Asset layers/Transmission Tower.shp",
+    "geometrySource": "standalone",
+    "geometryFile": "infrastructure-assets/transmission-towers.geojson",
+    "unit": "none",
+    "renderType": "raw-points",
+    "colorRamp": [
+      "#455A64"
+    ],
+    "breaks": [],
+    "classification": "fixed",
+    "defaultOpacity": 0.85,
+    "defaultVisible": false,
+    "description": "Raw transmission towers geometry, not a graded indicator — shown as literal locations/lines/patches.",
+    "dataQualityNote": null
   }
 ]

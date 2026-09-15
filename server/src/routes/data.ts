@@ -22,6 +22,12 @@ const ALLOWED_FILES = new Set([
   'infrastructure-assets/power-stations.geojson',
   'infrastructure-assets/soil-health-points.geojson',
   'infrastructure-assets/spring-locations.geojson',
+  'infrastructure-assets/schools.geojson',
+  'infrastructure-assets/irrigation-sources.geojson',
+  'infrastructure-assets/distribution-transformers.geojson',
+  'infrastructure-assets/power-transformers.geojson',
+  'infrastructure-assets/sub-stations.geojson',
+  'infrastructure-assets/transmission-towers.geojson',
 ]);
 
 export const dataRouter = Router();

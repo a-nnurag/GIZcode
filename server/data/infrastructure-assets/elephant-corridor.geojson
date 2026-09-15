@@ -1,0 +1,13 @@
+{"type":"FeatureCollection", "features": [
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[78.1469,30.0742],[78.1928,30.1108]]},"properties":{"corridor_n":"Kansrau–Barkote"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[78.1956,30.0539],[78.2214,30.0761]]},"properties":{"corridor_n":"Motichur–Barkote & Rishikesh"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[78.2111,30.0275],[78.2792,30.0553]]},"properties":{"corridor_n":"Motichur–Gohri"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[78.1878,29.9842],[78.2461,30.0233]]},"properties":{"corridor_n":"Chilla–Motichur"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[78.3794,29.7569],[78.5575,29.8089]]},"properties":{"corridor_n":"Rawasan–Sonanadi (via Lansdowne FD)"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[78.3253,29.6794],[78.5272,29.8025]]},"properties":{"corridor_n":"Rawasan–Sonanadi (via Bijnor Forest Division)"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[79.1217,29.4208],[79.1511,29.4522]]},"properties":{"corridor_n":"Malani–Kota"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[79.0994,29.4933],[79.1436,29.525]]},"properties":{"corridor_n":"Chilkiya–Kota"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[79.1097,29.5372],[79.155,29.5553]]},"properties":{"corridor_n":"South Patlidun–Chilkiya"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[79.36,29.2169],[79.4167,29.25]]},"properties":{"corridor_n":"Fatehpur–Gadgadia"}},
+{"type":"Feature","geometry":{"type":"LineString","coordinates":[[80.0153,28.9561],[80.0661,28.9989]]},"properties":{"corridor_n":"Kilpura–Khatima–Surai"}}
+]}
